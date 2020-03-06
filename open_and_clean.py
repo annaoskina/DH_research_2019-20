@@ -22,6 +22,14 @@ def count_all_words(parsed_text):
       count_all_words = len(list_of_everything)
       return count_all_words
 
+def list_all_gairaigo(parsed_text):
+      list_of_everything = parsed_text.split('\n')
+      list_of_gairaigo = []
+      for i, gairaigo in enumerate(list_of_everything):
+            if '外' in gairaigo:
+                  list_of_gairaigo.append(gairaigo)
+      return list_of_gairaigo
+
 def count_all_gairaigo(parsed_text):
       list_of_everything = parsed_text.split('\n')
       list_of_gairaigo = []
@@ -36,7 +44,11 @@ def main():
       clean_file = clean_the_file(raw_file)
       parsed_text = lemmatize_the_txt(clean_file)
       #number_of_words = count_all_words(parsed_text)
+      all_gairaigo = list_all_gairaigo(parsed_text)
       number_of_gairaigo = count_all_gairaigo(parsed_text)
+      #print(number_of_gairaigo)
+      print(parsed_text)
+      print(all_gairaigo)
       print(number_of_gairaigo)
 
 if __name__ == '__main__':
