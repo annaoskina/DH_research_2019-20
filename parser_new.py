@@ -11,23 +11,21 @@ def clean_the_text(raw_file):
       step_1 = re.sub('(----------).+(---------)', '', raw_file, flags=re.DOTALL) #очищаю от условных обозначений в начале
       step_2 = re.sub('《.+?》', '', step_1)  #очищаю от фуриганы
       step_3 = re.sub('※［＃「均のつくり」、第3水準1-14-75］', '', step_2)
-      clean_txt = re.sub('(底本：「).+?(ボランティアの皆さんです。)', '', step_3, flags=re.DOTALL) #очищаю от метаданных
+      step_4 = re.sub('(底本：「).+?(ボランティアの皆さんです。)', '', step_3, flags=re.DOTALL) #очищаю от метаданных
+      clean_txt = re.sub('EOS', '', step_4)
       return clean_txt
 
 def parse_the_text(clean_txt):
       m = MeCab.Tagger('-d /home/anna/Documents/UniDic-kindai_1603')
       parsed_txt = m.parse(clean_txt)
-      #list_all_words = parsed_txt.split('\n')
-      return parsed_txt
+      parsed_txt = parsed_txt.replace('\t', ',')
+      parsed_by_words = parsed_txt.split('\n')
+      return parsed_by_words
 
 def write_the_file(parsed_txt):
-      fw = open("parsed.csv", 'w', encoding = 'utf-8')
+      fw = open("parsed.txt", 'w', encoding = 'utf-8')
       fw.write("{}".format(parsed_txt))
       fw.close()
-
-def csv_reader(csv_file):
-      reader = csv.reader(csv_file)
-      print(reader)
 
 def main():
       all_loan_words = 0
@@ -38,7 +36,7 @@ def main():
       clean_txt = clean_the_text(raw_file)
       parsed_txt = parse_the_text(clean_txt)
       #fw = write_the_file(parsed_txt)
-      test = csv_reader('parced.csv')
+      test = write_the_file(parsed_txt)
 
 if __name__ == '__main__':
       main()
