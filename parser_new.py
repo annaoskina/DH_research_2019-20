@@ -56,10 +56,11 @@ def count_loan_words(parsed_txt):
                         if 12450 <= ord(token[0][0]) <= 12531:
                               katakana_words += 1
                               katakana.append(token[0])
-            if len(token) == 6:
+            if 1 < len(token) <= 7:
+                  #print(token)
                   if 65 <= ord(token[0][0]) <= 122:
-                              romaji_words += 1
-                              romaji.append(token[0])
+                        romaji_words += 1
+                        romaji.append(token[0])
                   if 12450 <= ord(token[0][0]) <= 12531:
                         katakana_words += 1
                         katakana.append(token[0])
@@ -73,7 +74,8 @@ def write_the_file(parsed_txt):
 
 def main():
 
-      raw_file = open_the_file('Source_for_research/majutsu.txt')
+      #raw_file = open_the_file('Source_for_research/majutsu.txt')
+      raw_file = open_the_file('Source_for_research/vita_sexualis.txt')
       clean_txt = clean_the_text(raw_file)
       parsed_txt = parse_the_text(clean_txt)
       #test = write_the_file(parsed_txt)
