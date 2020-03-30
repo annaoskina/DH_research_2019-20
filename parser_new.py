@@ -17,8 +17,12 @@ def clean_the_text(raw_file):
 def parse_the_text(clean_txt):
       m = MeCab.Tagger('-d /home/anna/Documents/UniDic-kindai_1603')
       parsed_txt = m.parse(clean_txt)
-      parsed_txt = parsed_txt.replace('\t', ',')
+      parsed_txt = parsed_txt.replace(',', '\t')
+      fw = open("parsed.tsv", 'w', encoding = 'utf-8')
+      fw.write("{}".format(parsed_txt))
+      fw.close()
       parsed_by_words = parsed_txt.split('\n')
+      #print(parsed_by_words)
       return parsed_by_words
 
 def count_loan_words(parsed_txt):
@@ -31,22 +35,34 @@ def count_loan_words(parsed_txt):
       kanji_words = 0
       kanji = []
       for token in parsed_txt:
-            token = token.split(',')
-            if '外' in token[12]:
-                  all_gairaigo += 1
-                  gairaigo = gairaigo.append(token[0])
-                  regex1 = '[ァ-・ヽヾ゛゜ー]'
-                  regex2 = '[Ａ-ｚ]'
-                  regex3 = '[U+4E00..U+62FF][U+6300..U+77FF][U+7800..U+8CFF][U+8D00..U+9FFF]'
-                  if re.search(regex1, token[0]):
+            token = token.split('\t')
+            if len(token) > 12:
+                  if '外' in token[12]:
+                        all_gairaigo += 1
+                        gairaigo.append(token[0])
+                        if 65 <= ord(token[0][0]) <= 122:
+                              romaji_words += 1
+                              romaji.append(token[0])
+                        if 12450 <= ord(token[0][0]) <= 12531:
+                              katakana_words += 1
+                              katakana.append(token[0])
+                        else:
+                              kanji_words += 1
+                              kanji.append(token[0])
+                  if '固' in token[12]:
+                        if 65 <= ord(token[0][0]) <= 122:
+                              romaji_words += 1
+                              romaji.append(token[0])
+                        if 12450 <= ord(token[0][0]) <= 12531:
+                              katakana_words += 1
+                              katakana.append(token[0])
+            if len(token) == 6:
+                  if 65 <= ord(token[0][0]) <= 122:
+                              romaji_words += 1
+                              romaji.append(token[0])
+                  if 12450 <= ord(token[0][0]) <= 12531:
                         katakana_words += 1
-                        katakana = katakana.append(token[0])
-                  if re.search(regex2, token[0]):
-                        romaji_words += 1
-                        romaji = romaji.append(token[0])
-                  if re.search(regex3, token[0]):
-                        kanji_words += 1
-                        kanji = kanji.append(token[0])
+                        katakana.append(token[0])
       print(katakana_words, romaji_words, kanji_words)
       print(katakana, romaji, kanji)
 
@@ -62,6 +78,7 @@ def main():
       parsed_txt = parse_the_text(clean_txt)
       #test = write_the_file(parsed_txt)
       count = count_loan_words(parsed_txt)
+      #tsv = write_tsv(parsed_txt)
 
 if __name__ == '__main__':
       main()
