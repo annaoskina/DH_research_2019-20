@@ -10,7 +10,7 @@ def open_the_file(filename):
 def clean_the_text(raw_file):
       step_1 = re.sub('(----------).+(---------)', '', raw_file, flags=re.DOTALL) #очищаю от условных обозначений в начале
       step_2 = re.sub('《.+?》', '', step_1)  #очищаю от фуриганы
-      step_3 = re.sub('※［＃「均のつくり」、第3水準1-14-75］', '', step_2)
+      step_3 = re.sub('［＃.+?］', '', step_2)
       clean_txt = re.sub('(底本：「).+?(ボランティアの皆さんです。)', '', step_3, flags=re.DOTALL) #очищаю от метаданных
       return clean_txt
 
@@ -34,7 +34,9 @@ def count_loan_words(parsed_txt):
       romaji = []
       kanji_words = 0
       kanji = []
+      lines = 0
       for token in parsed_txt:
+            lines += 1
             token = token.split('\t')
             if len(token) > 12:
                   if '外' in token[12]:
@@ -51,20 +53,24 @@ def count_loan_words(parsed_txt):
                               kanji.append(token[0])
                   if '固' in token[12]:
                         if 65 <= ord(token[0][0]) <= 122:
+                              all_gairaigo += 1
                               romaji_words += 1
                               romaji.append(token[0])
                         if 12450 <= ord(token[0][0]) <= 12531:
+                              all_gairaigo += 1
                               katakana_words += 1
                               katakana.append(token[0])
             if 1 < len(token) <= 7:
                   #print(token)
                   if 65 <= ord(token[0][0]) <= 122:
+                        all_gairaigo += 1
                         romaji_words += 1
                         romaji.append(token[0])
                   if 12450 <= ord(token[0][0]) <= 12531:
+                        all_gairaigo += 1
                         katakana_words += 1
                         katakana.append(token[0])
-      print(katakana_words, romaji_words, kanji_words)
+      print(lines, all_gairaigo, katakana_words, romaji_words, kanji_words)
       print(katakana, romaji, kanji)
 
 def write_the_file(parsed_txt):
@@ -73,10 +79,11 @@ def write_the_file(parsed_txt):
       fw.close()
 
 def main():
-
       #raw_file = open_the_file('Source_for_research/majutsu.txt')
-      raw_file = open_the_file('Source_for_research/vita_sexualis.txt')
+      #raw_file = open_the_file('Source_for_research/vita_sexualis.txt')
+      raw_file = open_the_file('Source_for_research/maihime.txt')
       clean_txt = clean_the_text(raw_file)
+      print(clean_txt)
       parsed_txt = parse_the_text(clean_txt)
       #test = write_the_file(parsed_txt)
       count = count_loan_words(parsed_txt)
