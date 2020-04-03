@@ -1,10 +1,11 @@
 import re
 import MeCab
 import csv
+import os
 
 def open_the_file(filename):
-      with open (filename, 'r', encoding = 'Shift-JIS') as openfile:
-            raw_txt = openfile.read()
+      with open('/home/anna/DH_research_2019-20/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
+                  raw_txt = f.read()
       return raw_txt
 
 def clean_the_text(raw_file):
@@ -26,67 +27,92 @@ def parse_the_text(clean_txt):
       return parsed_by_words
 
 def count_loan_words(parsed_txt):
-      all_gairaigo = 0
-      gairaigo = []
-      katakana_words = 0
-      katakana = []
-      romaji_words = 0
-      romaji = []
-      kanji_words = 0
-      kanji = []
-      lines = 0
+      gairaigo_counter = 0
+      katakana_counter = 0
+      katakana_array = []
+      katakana_list = []
+      romaji_counter = 0
+      romaji_array = []
+      romaji_list = []
+      kanji_counter = 0
+      kanji_array = []
+      kanji_list = []
+      lines_counter = 0
       for token in parsed_txt:
-            lines += 1
+            lines_counter += 1
             token = token.split('\t')
             if len(token) > 12:
                   if '外' in token[12]:
-                        all_gairaigo += 1
-                        gairaigo.append(token[0])
+                        gairaigo_counter += 1
                         if 65 <= ord(token[0][0]) <= 122:
-                              romaji_words += 1
-                              romaji.append(token[0])
+                              romaji_counter += 1
+                              romaji_list.append(token[0])
                         if 12450 <= ord(token[0][0]) <= 12531:
-                              katakana_words += 1
-                              katakana.append(token[0])
+                              katakana_counter += 1
+                              katakana_list.append(token[0])
                         else:
-                              kanji_words += 1
-                              kanji.append(token[0])
+                              kanji_counter += 1
+                              kanji_list.append(token[0])
                   if '固' in token[12]:
                         if 65 <= ord(token[0][0]) <= 122:
-                              all_gairaigo += 1
-                              romaji_words += 1
-                              romaji.append(token[0])
+                              gairaigo_counter += 1
+                              romaji_counter += 1
+                              romaji_list.append(token[0])
                         if 12450 <= ord(token[0][0]) <= 12531:
-                              all_gairaigo += 1
-                              katakana_words += 1
-                              katakana.append(token[0])
+                              gairaigo_counter += 1
+                              katakana_counter += 1
+                              katakana_list.append(token[0])
             if 1 < len(token) <= 7:
-                  #print(token)
                   if 65 <= ord(token[0][0]) <= 122:
-                        all_gairaigo += 1
-                        romaji_words += 1
-                        romaji.append(token[0])
+                        gairaigo_counter += 1
+                        romaji_counter += 1
+                        romaji_list.append(token[0])
                   if 12450 <= ord(token[0][0]) <= 12531:
-                        all_gairaigo += 1
-                        katakana_words += 1
-                        katakana.append(token[0])
-      print(lines, all_gairaigo, katakana_words, romaji_words, kanji_words)
-      print(katakana, romaji, kanji)
-
+                        gairaigo_counter += 1
+                        katakana_counter += 1
+                        katakana_list.append(token[0])
+            if(lines_counter % 10000 == 0):
+                  kanji_array.append(kanji_counter)
+                  romaji_array.append(romaji_counter)
+                  katakana_array.append(katakana_counter)
+                  kanji_counter = 0
+                  romaji_counter = 0
+                  katakana_counter = 0
+      romaji_array.append(romaji_counter)
+      katakana_array.append(katakana_counter)
+      kanji_array.append(kanji_counter)
+      print('words total =\t', lines_counter)
+      print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
+      
 def write_the_file(parsed_txt):
       fw = open("parsed.txt", 'w', encoding = 'utf-8')
       fw.write("{}".format(parsed_txt))
       fw.close()
 
 def main():
+      files = os.listdir('/home/anna/DH_research_2019-20/Source_for_research')
+      for file in files:
+            if not file.endswith('.txt'):
+                  continue
+            with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(file), 'r', encoding = 'Shift-JIS') as f:
+                  print('\n', file)
+                  raw_file = f.read()
+                  clean_txt = clean_the_text(raw_file)   
+                  parsed_txt = parse_the_text(clean_txt)
+                  count = count_loan_words(parsed_txt)
+
+
+
+
+      
       #raw_file = open_the_file('Source_for_research/majutsu.txt')
       #raw_file = open_the_file('Source_for_research/vita_sexualis.txt')
-      raw_file = open_the_file('Source_for_research/maihime.txt')
-      clean_txt = clean_the_text(raw_file)
-      print(clean_txt)
-      parsed_txt = parse_the_text(clean_txt)
+      #raw_file = open_the_file('Source_for_research/maihime.txt')
+      #a = open_files('/home/anna/DH_research_2019-20/Source_for_research')
+      #clean_txt = clean_the_text(raw_file)
+      #parsed_txt = parse_the_text(clean_txt)
       #test = write_the_file(parsed_txt)
-      count = count_loan_words(parsed_txt)
+      #count = count_loan_words(parsed_txt)
       #tsv = write_tsv(parsed_txt)
 
 if __name__ == '__main__':
