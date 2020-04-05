@@ -44,7 +44,7 @@ def count_loan_words(parsed_txt):
                         if 65 <= ord(token[0][0]) <= 122:
                               romaji_counter += 1
                               romaji_list.append(token[0])
-                        if 12450 <= ord(token[0][0]) <= 12531:
+                        if 12450 <= ord(token[0][0]) <= 12538:
                               katakana_counter += 1
                               katakana_list.append(token[0])
                         else:
@@ -55,7 +55,7 @@ def count_loan_words(parsed_txt):
                               gairaigo_counter += 1
                               romaji_counter += 1
                               romaji_list.append(token[0])
-                        if 12450 <= ord(token[0][0]) <= 12531:
+                        if 12450 <= ord(token[0][0]) <= 12538:
                               gairaigo_counter += 1
                               katakana_counter += 1
                               katakana_list.append(token[0])
@@ -64,7 +64,7 @@ def count_loan_words(parsed_txt):
                         gairaigo_counter += 1
                         romaji_counter += 1
                         romaji_list.append(token[0])
-                  if 12450 <= ord(token[0][0]) <= 12531:
+                  if 12450 <= ord(token[0][0]) <= 12538:
                         gairaigo_counter += 1
                         katakana_counter += 1
                         katakana_list.append(token[0])
@@ -78,6 +78,7 @@ def count_loan_words(parsed_txt):
       katakana_array.append(katakana_counter)
       kanji_array.append(kanji_counter)
       romaji_array.append(romaji_counter)
+      #print(katakana_list, kanji_list, romaji_list)
       #print('words total =\t', lines_counter)
       #print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
       return katakana_array, kanji_array, romaji_array
@@ -93,7 +94,7 @@ def main():
                   clean_txt = clean_the_text(raw_file)   
                   parsed_txt = parse_the_text(clean_txt)
                   with open('/home/anna/DH_research_2019-20/Files_tsv/{}.tsv'.format(file), 'w', encoding = 'utf-8') as fw:
-                            fw.write("{}".format(parsed_txt))
+                        fw.write("{}".format(parsed_txt))
                   result = count_loan_words(parsed_txt)
                   #print(result)
                   with open('/home/anna/DH_research_2019-20/Results/{}.csv'.format(file), 'w', encoding = 'utf-8', newline = '') as csv_file:
