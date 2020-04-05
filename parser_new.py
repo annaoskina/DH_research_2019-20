@@ -2,6 +2,7 @@ import re
 import MeCab
 import csv
 import os
+import csv
 
 def open_the_file(filename):
       with open('/home/anna/DH_research_2019-20/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
@@ -23,19 +24,18 @@ def parse_the_text(clean_txt):
       fw.write("{}".format(parsed_txt))
       fw.close()
       parsed_by_words = parsed_txt.split('\n')
-      #print(parsed_by_words)
       return parsed_by_words
 
 def count_loan_words(parsed_txt):
       gairaigo_counter = 0
       katakana_counter = 0
-      katakana_array = []
+      katakana_array = ['katakana']
       katakana_list = []
       romaji_counter = 0
-      romaji_array = []
+      romaji_array = ['romaji']
       romaji_list = []
       kanji_counter = 0
-      kanji_array = []
+      kanji_array = ['kanji']
       kanji_list = []
       lines_counter = 0
       for token in parsed_txt:
@@ -71,23 +71,20 @@ def count_loan_words(parsed_txt):
                         gairaigo_counter += 1
                         katakana_counter += 1
                         katakana_list.append(token[0])
-            if(lines_counter % 10000 == 0):
+            if(lines_counter % 5000 == 0):
                   kanji_array.append(kanji_counter)
                   romaji_array.append(romaji_counter)
                   katakana_array.append(katakana_counter)
                   kanji_counter = 0
                   romaji_counter = 0
                   katakana_counter = 0
-      romaji_array.append(romaji_counter)
       katakana_array.append(katakana_counter)
       kanji_array.append(kanji_counter)
+      romaji_array.append(romaji_counter)
       print('words total =\t', lines_counter)
       print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
-      
-def write_the_file(parsed_txt):
-      fw = open("parsed.txt", 'w', encoding = 'utf-8')
-      fw.write("{}".format(parsed_txt))
-      fw.close()
+      #print(katakana_array, '\n', kanji_array, '\n', romaji_array, '\n')
+      return katakana_array, kanji_array, romaji_array
 
 def main():
       files = os.listdir('/home/anna/DH_research_2019-20/Source_for_research')
@@ -99,21 +96,12 @@ def main():
                   raw_file = f.read()
                   clean_txt = clean_the_text(raw_file)   
                   parsed_txt = parse_the_text(clean_txt)
-                  count = count_loan_words(parsed_txt)
-
-
-
-
-      
-      #raw_file = open_the_file('Source_for_research/majutsu.txt')
-      #raw_file = open_the_file('Source_for_research/vita_sexualis.txt')
-      #raw_file = open_the_file('Source_for_research/maihime.txt')
-      #a = open_files('/home/anna/DH_research_2019-20/Source_for_research')
-      #clean_txt = clean_the_text(raw_file)
-      #parsed_txt = parse_the_text(clean_txt)
-      #test = write_the_file(parsed_txt)
-      #count = count_loan_words(parsed_txt)
-      #tsv = write_tsv(parsed_txt)
+                  result = count_loan_words(parsed_txt)
+                  #print(result)
+                  with open('/home/anna/DH_research_2019-20/Results/{}.csv'.format(file), 'w', encoding = 'utf-8', newline = '') as csv_file:
+                        writer = csv.writer(csv_file, delimiter = ',')
+                        for line in result:
+                              writer.writerow(line)
 
 if __name__ == '__main__':
       main()
