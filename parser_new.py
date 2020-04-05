@@ -20,11 +20,7 @@ def parse_the_text(clean_txt):
       m = MeCab.Tagger('-d /home/anna/Documents/UniDic-kindai_1603')
       parsed_txt = m.parse(clean_txt)
       parsed_txt = parsed_txt.replace(',', '\t')
-      fw = open("parsed.tsv", 'w', encoding = 'utf-8')
-      fw.write("{}".format(parsed_txt))
-      fw.close()
-      parsed_by_words = parsed_txt.split('\n')
-      return parsed_by_words
+      return parsed_txt
 
 def count_loan_words(parsed_txt):
       gairaigo_counter = 0
@@ -38,7 +34,8 @@ def count_loan_words(parsed_txt):
       kanji_array = ['kanji']
       kanji_list = []
       lines_counter = 0
-      for token in parsed_txt:
+      parsed_by_words = parsed_txt.split('\n')
+      for token in parsed_by_words:
             lines_counter += 1
             token = token.split('\t')
             if len(token) > 12:
@@ -81,9 +78,8 @@ def count_loan_words(parsed_txt):
       katakana_array.append(katakana_counter)
       kanji_array.append(kanji_counter)
       romaji_array.append(romaji_counter)
-      print('words total =\t', lines_counter)
-      print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
-      #print(katakana_array, '\n', kanji_array, '\n', romaji_array, '\n')
+      #print('words total =\t', lines_counter)
+      #print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
       return katakana_array, kanji_array, romaji_array
 
 def main():
@@ -92,10 +88,12 @@ def main():
             if not file.endswith('.txt'):
                   continue
             with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(file), 'r', encoding = 'Shift-JIS') as f:
-                  print('\n', file)
+                  #print('\n', file)
                   raw_file = f.read()
                   clean_txt = clean_the_text(raw_file)   
                   parsed_txt = parse_the_text(clean_txt)
+                  with open('/home/anna/DH_research_2019-20/Files_tsv/{}.tsv'.format(file), 'w', encoding = 'utf-8') as fw:
+                            fw.write("{}".format(parsed_txt))
                   result = count_loan_words(parsed_txt)
                   #print(result)
                   with open('/home/anna/DH_research_2019-20/Results/{}.csv'.format(file), 'w', encoding = 'utf-8', newline = '') as csv_file:
