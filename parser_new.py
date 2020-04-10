@@ -78,8 +78,8 @@ def count_loan_words(parsed_txt):
       katakana_array.append(katakana_counter)
       kanji_array.append(kanji_counter)
       romaji_array.append(romaji_counter)
-      #print(katakana_list, kanji_list, romaji_list)
-      #print('words total =\t', lines_counter)
+      print('words total =\t', lines_counter)
+      print(katakana_list, kanji_list, romaji_list)
       #print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
       return katakana_array, kanji_array, romaji_array
 
@@ -89,18 +89,18 @@ def main():
             if not file.endswith('.txt'):
                   continue
             with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(file), 'r', encoding = 'Shift-JIS') as f:
-                  #print('\n', file)
+                  print('\n', file)
                   raw_file = f.read()
                   clean_txt = clean_the_text(raw_file)   
                   parsed_txt = parse_the_text(clean_txt)
-                  with open('/home/anna/DH_research_2019-20/Files_tsv/{}.tsv'.format(file), 'w', encoding = 'utf-8') as fw:
-                        fw.write("{}".format(parsed_txt))
+                  #with open('/home/anna/DH_research_2019-20/Files_tsv/{}.tsv'.format(file), 'w', encoding = 'utf-8') as fw:
+                  #      fw.write("{}".format(parsed_txt))
                   result = count_loan_words(parsed_txt)
                   #print(result)
-                  with open('/home/anna/DH_research_2019-20/Results/{}.csv'.format(file), 'w', encoding = 'utf-8', newline = '') as csv_file:
-                        writer = csv.writer(csv_file, delimiter = ',')
-                        for line in result:
-                              writer.writerow(line)
+                 # with open('/home/anna/DH_research_2019-20/Results/{}.csv'.format(file), 'w', encoding = 'utf-8', newline = '') as csv_file:
+                  #      writer = csv.writer(csv_file, delimiter = ',')
+                   #     for line in result:
+                    #          writer.writerow(line)
 
 if __name__ == '__main__':
       main()
