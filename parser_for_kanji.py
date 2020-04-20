@@ -42,7 +42,5 @@ for filename in files:
                                           parsed_word = parsed_by_words[i].split('\t')
                                           previous_word = parsed_word[0]
                                           print(previous_word, word, reading)
-                                    #print(i, parsed_by_words[i-1][0:2], parsed_by_words[i][0:4], parsed_by_words[i+2][0:5])
-            #print(kanji_list)
-            #print(len(kanji_list))
+
 

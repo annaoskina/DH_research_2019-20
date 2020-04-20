@@ -21,7 +21,6 @@ def parse_the_text(clean_txt):
       parsed_txt = m.parse(clean_txt)
       parsed_txt = parsed_txt.replace(',', '\t')
       parsed_by_words = parsed_txt.split('\n')
-      #print(parsed_by_words)
       return parsed_by_words #один список разобранных слов
 
 def count_katakana(parsed_txt):
