@@ -36,7 +36,7 @@ def count_loan_words(parsed_txt):
             if len(token) > 12:
                   if '外' in token[12]:
                         gairaigo_counter += 1
-                        if 65 <= ord(token[0][0]) <= 122: #включаю латиницу halg-width (H)
+                        if 65 <= ord(token[0][0]) <= 122: #включаю латиницу half-width (H)
                               romaji_counter += 1
                               romaji_list.append(token[0])
                         elif 65313 <= ord(token[0][0]) <= 65338: #включаю латиницу full-width (Ｈ)
@@ -50,6 +50,8 @@ def count_loan_words(parsed_txt):
                         elif 65296 <= ord(token[0][0]) <= 65305: #исключаю цифры full-width (４)
                               continue
                         elif 48 <= ord(token[0][0]) <= 57:  #исключаю цифры half-width (4)
+                              continue
+                        elif token[0] == '汗':
                               continue
                         else:
                               kanji_counter += 1
@@ -68,6 +70,7 @@ def count_loan_words(parsed_txt):
                               katakana_counter += 1
                               katakana_list.append(token[0])
             if 1 < len(token) <= 7:
+                  #print(token)
                   if 65 <= ord(token[0][0]) <= 122:
                         gairaigo_counter += 1
                         romaji_counter += 1
@@ -79,7 +82,12 @@ def count_loan_words(parsed_txt):
                   if 12450 <= ord(token[0][0]) <= 12538:
                         gairaigo_counter += 1
                         katakana_counter += 1
-                        katakana_list.append(token[0])
+                        katakana_list.append(token[0])                 
+                  lost_and_found = ['洋灯', '洋琴', '洋袴', '洋杖']
+                  if token[0] in lost_and_found:
+                        gairaigo_counter += 1
+                        kanji_counter += 1
+                        kanji_list.append(token[0])
             if(lines_counter % 5000 == 0):
                   kanji_array.append(kanji_counter)
                   romaji_array.append(romaji_counter)
@@ -91,7 +99,9 @@ def count_loan_words(parsed_txt):
       kanji_array.append(kanji_counter)
       romaji_array.append(romaji_counter)
       #print('words total =\t', lines_counter)
-      print(katakana_list, kanji_list, romaji_list)
+      #print(katakana_list, kanji_list, romaji_list)
+      print(kanji_list)
+      print(len(kanji_list))
       #print('katakana =\t', katakana_array, '\nkanji =\t\t', kanji_array, '\nromaji =\t', romaji_array)
       return katakana_array, kanji_array, romaji_array
 

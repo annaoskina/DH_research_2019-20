@@ -1,34 +1,48 @@
 import re
 import MeCab
+import os
 
-with open('/home/anna/DH_research_2019-20/Source_for_research/buncho.txt', 'r', encoding = 'Shift-JIS') as f:
-    text = f.read()
+files = os.listdir('/home/anna/DH_research_2019-20/Source_for_research')
+for filename in files:
+      if not filename.endswith('.txt'):
+            continue
+      with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
+            print('\n', filename)
+            text = f.read()
+            step_1 = re.sub('(----------).+(---------)', '', text, flags=re.DOTALL) #очищаю от условных обозначений в начале
+            step_2 = re.sub('［＃.+?］', '', step_1)
+            clean_txt = re.sub('(底本：「).+?(ボランティアの皆さんです。)', '', step_2, flags=re.DOTALL) #очищаю от метаданных
 
-step_1 = re.sub('(----------).+(---------)', '', text, flags=re.DOTALL) #очищаю от условных обозначений в начале
-step_2 = re.sub('［＃.+?］', '', step_1)
-clean_txt = re.sub('(底本：「).+?(ボランティアの皆さんです。)', '', step_2, flags=re.DOTALL) #очищаю от метаданных
+            m = MeCab.Tagger('-d /home/anna/Documents/UniDic-kindai_1603')
+            parsed_txt = m.parse(clean_txt)
+            parsed_txt = parsed_txt.replace(',', '\t')
 
-m = MeCab.Tagger('-d /home/anna/Documents/UniDic-kindai_1603')
-parsed_txt = m.parse(clean_txt)
-parsed_txt = parsed_txt.replace(',', '\t')
+            parsed_by_words = parsed_txt.split('\n')
+            #print(parsed_by_words)
 
-parsed_by_words = parsed_txt.split('\n')
-for tokens in parsed_by_words:
-      tokens = tokens.split('\t')
-      #print(tokens)
-      
-#['洋灯', '名詞', '普通名詞', '一般', '*', '*', '*', 'ヨウトウ', '洋灯', '洋灯', 'ヨートー', 'ヨウトウ', '漢', '洋灯', 'ヨートー', 'ヨウトウ', 'ヨウトウ', '*', '*', '*', '*', '*', '*', '0', 'C2', '*']
-#['《', '補助記号', '括弧開', '*', '*', '*', '*', '', '《', '《', '', '', '記号', '《', '', '', '', '*', '*', '*', '*', '*', '*', '*', '*', '*']
-#['ランプ', '名詞', '普通名詞', '一般', '*', '*', '*', 'ランプ', 'ランプ-lamp', 'ランプ', 'ランプ', 'ランプ', '外', 'ランプ', 'ランプ', 'ランプ', 'ランプ', '*', '*', '*', '*', '*', '*', '1', 'C1', '*']
+            kanji_list = []
+            for i, parsed_word in enumerate(parsed_by_words):
+                  if i < len(parsed_by_words):
+                        parsed_word = parsed_word.split('\t')
+                        if parsed_word[0] == '《':
+                              i += 1
+                              parsed_word = parsed_by_words[i].split('\t')
+                              reading = parsed_word[0]
+                              if 12450 <= ord(parsed_by_words[i][0]) <= 12538:
+                                    i = i - 2
+                                    parsed_word = parsed_by_words[i].split('\t')
+                                    word = parsed_word[0]
+                                    if 65 <= ord(word[0]) <= 122:
+                                          continue
+                                    elif 65313 <= ord(word[0]) <= 65338:
+                                          continue
+                                    else:
+                                          kanji_list.append(word)
+                                          i = i - 1
+                                          parsed_word = parsed_by_words[i].split('\t')
+                                          previous_word = parsed_word[0]
+                                          print(previous_word, word, reading)
+                                    #print(i, parsed_by_words[i-1][0:2], parsed_by_words[i][0:4], parsed_by_words[i+2][0:5])
+            #print(kanji_list)
+            #print(len(kanji_list))
 
-      kanji_list = []
-      for i, token in enumerate(tokens):
-            if token == '《':
-                  i += 1
-                  if 12450 <= ord(tokens[i][0]) <= 12538:   #проверяю, является ли знак катаканой IndexError: string index out of range
-                        i = i - 2                           #возвращаюсь к предыдущему токену
-                        kanji_list.append(token[i])         #записываю его в список иероглифов
-
-print(kanji_list)
-
-            
