@@ -93,40 +93,40 @@ def count_kanji(parsed_txt):
       kanji_list = []
       kanji_array = []
       lines_counter = 0
-      for token in parsed_txt:
+      for i, token in enumerate(parsed_txt):
             lines_counter += 1
-            token = token.split('\t')
-            if len(token) > 12:
-                  lines_counter += 1
-                  if '外' in token[12]:
-                        if not 65 <= ord(token[0][0]) <= 122 and not 65313 <= ord(token[0][0]) <= 65338 and not 12450 <= ord(token[0][0]) <= 12538 and not 12352 <= ord(token[0][0]) <= 12447 and not 65296 <= ord(token[0][0]) <= 65305 and not 48 <= ord(token[0][0]) <= 57 and not token[0] == '汗':
+            if i < len(parsed_txt):
+                  token = token.split('\t') #token - это список (слово + разбор)
+                  if len(token) > 12:
+                        if '外' in token[12]:
+                              if not 65 <= ord(token[0][0]) <= 122 and not 65313 <= ord(token[0][0]) <= 65338 and not 12450 <= ord(token[0][0]) <= 12538 and not 12352 <= ord(token[0][0]) <= 12447 and not 65296 <= ord(token[0][0]) <= 65305 and not 48 <= ord(token[0][0]) <= 57 and not token[0] == '汗': #а как же этикет?!
                                     kanji_counter += 1
                                     kanji_list.append(token[0])
-                  else:            
-                        for i, parsed_word in enumerate(parsed_txt):
-                              if i < len(parsed_txt):
-                                    parsed_word = parsed_word.split('\t')
-                                    if parsed_word[0] == '《':
-                                          i += 1 #здесь лежит фуригана - чтение на катакане
-                                          parsed_word = parsed_txt[i].split('\t')
-                                          reading = parsed_word[0] #запомни фуригану
-                                          if 12450 <= ord(parsed_txt[i][0]) <= 12538:
-                                                i = i - 2
-                                                parsed_word = parsed_txt[i].split('\t')
-                                                word = parsed_word[0] #здесь должен лежать иероглиф
-                                                if 65 <= ord(word[0]) <= 122:
-                                                      continue
-                                                elif 65313 <= ord(word[0]) <= 65338:
-                                                      continue
-                                                else:
-                                                      kanji_list.append(word)
+                                    #print(token[0])
+                        else:
+                              if token[0] == '《':
+                                    i += 1
+                                    if 12450 <= ord(parsed_txt[i][0]) <= 12538:
+                                          new_token = parsed_txt[i].split('\t')
+                                          reading = new_token[0]
+                                          i = i - 2
+                                          if 65 <= ord(parsed_txt[i][0]) <= 122:
+                                                continue
+                                          elif 65313 <= ord(parsed_txt[i][0]) <= 65338:
+                                                continue
+                                          else:
+                                                token_with_kanji = parsed_txt[i].split('\t')
+                                                if not token_with_kanji[12] == '外':
+                                                      reading = '*' + reading
+                                                      kanji_list.append(reading)
+                                                      kanji_counter += 1
                                                       i = i - 1
-                                                      parsed_word = parsed_txt[i].split('\t')
-                                                      previous_word = parsed_word[0] #но возможно иероглиф здесь, надо посмотреть
-                                                      #print(previous_word, word, reading)
-                  if(lines_counter % 5000 == 0):
-                        kanji_array.append(kanji_counter)
-                        kanji_counter = 0
+                                                      #print(reading)
+                              else:
+                                    continue
+            if(lines_counter % 5000 == 0):
+                  kanji_array.append(kanji_counter)
+                  kanji_counter = 0
       kanji_array.append(kanji_counter)
       print(kanji_list)
       return kanji_array
