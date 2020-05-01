@@ -17,17 +17,36 @@ for filename in files:
             parsed_txt = m.parse(clean_txt)
             parsed_txt = parsed_txt.replace(',', '\t')
             parsed_txt = parsed_txt.split('\n')
-            print(parsed_txt)
+            #print(parsed_txt)
 
-            kanji_counter = 0
-            kanji_list = []
-            kanji_array = []
+            katakana_counter = 0
+            katakana_list = []
+            katakana_array = []
             lines_counter = 0
-            for i, parsed_word in enumerate(parsed_txt):
+            for i, token in enumerate(parsed_txt):
                   lines_counter += 1
-                  print(len(parsed_txt))
                   if i < len(parsed_txt):
-                        parsed_word = parsed_word.split('\t')
+                        token = token.split('\t')
+                        if len(token) > 12:
+                              if token[12] == '外':
+                                    if 12450 <= ord(token[0][0]) <= 12538: #включаю катакану
+                                          if parsed_txt[i-1] == '《':
+                                                continue
+                                          else:
+                                                katakana_counter += 1
+                                                katakana_list.append(token[0])
+                              if token[12] ==  '固':
+                                    if 12450 <= ord(token[0][0]) <= 12538:
+                                    katakana_counter += 1
+                                    katakana_list.append(token[0])
+            print(katakana_list)
+                                          
+
+
+
+
+
+                        
                         if len(parsed_word) > 12:
                               if '外' in parsed_word[12]:
                                     if not 65 <= ord(parsed_word[0][0]) <= 122 and not 65313 <= ord(parsed_word[0][0]) <= 65338 and not 12450 <= ord(parsed_word[0][0]) <= 12538 and not 12352 <= ord(parsed_word[0][0]) <= 12447 and not 65296 <= ord(parsed_word[0][0]) <= 65305 and not 48 <= ord(parsed_word[0][0]) <= 57 and not parsed_word[0] == '汗': #а как же этикет?!
