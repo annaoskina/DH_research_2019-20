@@ -115,17 +115,20 @@ def count_kanji(parsed_txt):
                         else:
                               if token[0] == '《':
                                     new_token = parsed_txt[i+1].split('\t')
-                                    new_dic = {'word_dic': new_token[0], 'barbar': new_token[12]}
                                     if len(new_token) > 12:
-                                          if '外' in new_token[12]:                                          
-                                                words = [parsed_txt[i-1], parsed_txt[i-2]]
-                                                for word_dic in words[::-1]:
-                                                      if word_dic[1] == '外':
-                                                            print(word_dic[0], new_token[0])
-                                                            kanji_counter += 1
-                                                            kanji_list.append(word_dic[0])
-                                          else:
-                                                continue
+                                          if '外' in new_token[12]:
+                                                furigana = '*' + new_token[0]
+                                                token_with_kanji = parsed_txt[i-1].split('\t')
+                                                if len(token_with_kanji) > 12:
+                                                      if '外' not in  token_with_kanji[12]:
+                                                            token_with_kanji = parsed_txt[i-2].split('\t')
+                                                            if len(token_with_kanji) > 12:
+                                                                  if '外' not in  token_with_kanji[12]:
+                                                                        kanji_counter += 1
+                                                                        kanji_list.append(furigana)
+                                                                        print(furigana)
+                                    else:
+                                          continue
                               else:
                                     continue
             if(len(parsed_txt) % 5000 == 0):
