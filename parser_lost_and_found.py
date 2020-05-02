@@ -56,9 +56,8 @@ def count_katakana(parsed_txt):
                         katakana_array.append(katakana_counter)
                         katakana_counter = 0
       katakana_array.append(katakana_counter)
-      #print(katakana_list)
-      #print(len(katakana_list))
-      #print(hiragana_list)
+      print(katakana_list)
+      print(len(katakana_list))
       return katakana_array
 
 def count_romaji(parsed_txt):
@@ -94,8 +93,8 @@ def count_romaji(parsed_txt):
                   romaji_array.append(romaji_counter)
                   romaji_counter = 0
       romaji_array.append(romaji_counter)
-      #print(romaji_list)
-      #print(len(romaji_list))
+      print(romaji_list)
+      print(len(romaji_list))
       return romaji_array
 
 def count_kanji(parsed_txt):
@@ -108,35 +107,33 @@ def count_kanji(parsed_txt):
                   token = token.split('\t') #token - это список (слово + разбор)
                   if len(token) > 12:
                         if '外' in token[12]:
-                              if not 65 <= ord(token[0][0]) <= 122 and not 65313 <= ord(token[0][0]) <= 65338 and not 12450 <= ord(token[0][0]) <= 12538 and not 12352 <= ord(token[0][0]) <= 12447 and not 65296 <= ord(token[0][0]) <= 65305 and not 48 <= ord(token[0][0]) <= 57 and not token[0] == '汗': #а как же этикет?!
+                              if not 65 <= ord(token[0][0]) <= 122 and not 65313 <= ord(token[0][0]) <= 65338 and not 12450 <= ord(token[0][0]) <= 12538 and not 12352 <= ord(token[0][0]) <= 12447 and not 65296 <= ord(token[0][0]) <= 65305 and not 48 <= ord(token[0][0]) <= 57: #а как же этикет?!
                                     kanji_counter += 1
                                     kanji_list.append(token[0])
                                     #print(token[0], token[12])
                         else:
                               if token[0] == '《':
                                     new_token = parsed_txt[i+1].split('\t')
-                                    if len(new_token) > 12:
-                                          if '外' in new_token[12]:
-                                                furigana = '*' + new_token[0]
-                                                token_with_kanji = parsed_txt[i-1].split('\t')
-                                                if len(token_with_kanji) > 12:
-                                                      if '外' not in  token_with_kanji[12]:
-                                                            token_with_kanji = parsed_txt[i-2].split('\t')
-                                                            if len(token_with_kanji) > 12:
-                                                                  if '外' not in  token_with_kanji[12]:
-                                                                        kanji_counter += 1
-                                                                        kanji_list.append(furigana)
-                                                                        print(furigana)
-                                    else:
-                                          continue
+                                    furigana = new_token[0]
+                                    if 12450 <= ord(furigana[0]) <= 12538: #если первый символ - это катакана
+                                          maybe_kanji_token = parsed_txt[i-1].split('\t')
+                                          if not 65 <= ord(maybe_kanji_token[0][0]) <= 122\
+                                             and not 65313 <= ord(maybe_kanji_token[0][0]) <= 65338\
+                                             and '外' not in maybe_kanji_token[12]:
+                                                maybe_kanji_token = parsed_txt[i-2].split('\t')
+                                                if '外' not in maybe_kanji_token[12]:
+                                                      furigana = '*' + furigana
+                                                      kanji_counter += 1
+                                                      kanji_list.append(furigana)
+                                                      #print(furigana)
                               else:
                                     continue
             if(len(parsed_txt) % 5000 == 0):
                   kanji_array.append(kanji_counter)
                   kanji_counter = 0
       kanji_array.append(kanji_counter)
-      #print(kanji_list)
-      #print(len(kanji_list))
+      print(kanji_list)
+      print(len(kanji_list))
       return kanji_array
 
 def write_result_tsv (filename, parsed_txt):
