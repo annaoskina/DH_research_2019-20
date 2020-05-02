@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt
 
 def open_file(path, filename):
-      with open('/home/anna/DH_research_2019-20/Source_test/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
+      with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
             print('\n', filename)
             raw_file = f.read()
       return raw_file
@@ -45,9 +45,16 @@ def count_katakana(parsed_txt):
                                           katakana_counter += 1
                                           katakana_list.append(token[0])
                         elif '固' in token[12]:
-                              if 12450 <= ord(token[0][0]) <= 12538:
-                                    katakana_counter += 1
-                                    katakana_list.append(token[0])
+                              if 12450 <= ord(token[0][0]) <= 12538: #включаю катакану
+                                    if i:
+                                          if parsed_txt[i-1][0] == '《':
+                                                continue
+                                          else:
+                                                katakana_counter += 1
+                                                katakana_list.append(token[0])
+                                    else:
+                                          katakana_counter += 1
+                                          katakana_list.append(token[0])
                   if 1 < len(token) <= 7: #здесь попадается мусор, и я не знаю, как от него избавиться
                         if 12450 <= ord(token[0][0]) <= 12538:
                               katakana_counter += 1
@@ -56,8 +63,8 @@ def count_katakana(parsed_txt):
                         katakana_array.append(katakana_counter)
                         katakana_counter = 0
       katakana_array.append(katakana_counter)
-      print(katakana_list)
-      print(len(katakana_list))
+      #print(katakana_list)
+      #print(len(katakana_list))
       return katakana_array
 
 def count_romaji(parsed_txt):
@@ -93,11 +100,15 @@ def count_romaji(parsed_txt):
                   romaji_array.append(romaji_counter)
                   romaji_counter = 0
       romaji_array.append(romaji_counter)
-      print(romaji_list)
-      print(len(romaji_list))
+      #print(romaji_list)
+      #print(len(romaji_list))
       return romaji_array
 
 def count_kanji(parsed_txt):
+      stop_words = ['恨', '己ら', '幇', '疊', '汗', '八', '主思', '打', '峰', '粥', '負', '志', '丘']
+      sanskrit_words = ['陀羅尼', '舎利', '仏陀', '波羅葦僧', '波羅密', '迦陵頻伽', '修羅', '奈落', '涅槃', '世尊', '維摩', '琉璃', '南無', '弥陀', '比丘尼', '卒都婆', '卒堵婆', '阿弥', '玻璃', '菩薩', '良人', '檀那', '旦', '旦那', '于蘭盆', '盂蘭盆', '羅漢', '陀羅', '伽藍', '刹那', '沙弥', '沙門', '痘痕', '天麩羅', '天ぷら', '三昧', '伽羅', '般若', '卒塔婆', '袈裟', '塔婆', '娑婆', '達磨', '夜叉', '菩提', '婆羅門']
+      chinese_words = ['摩訶', '損徳', '拉麺', '鴛鴦', '善知鳥', '山神', '姉夫']
+      korean_words = ['両班']
       parsed_txt = parsed_txt.split('\n')
       kanji_counter = 0
       kanji_list = []
@@ -107,7 +118,16 @@ def count_kanji(parsed_txt):
                   token = token.split('\t') #token - это список (слово + разбор)
                   if len(token) > 12:
                         if '外' in token[12]:
-                              if not 65 <= ord(token[0][0]) <= 122 and not 65313 <= ord(token[0][0]) <= 65338 and not 12450 <= ord(token[0][0]) <= 12538 and not 12352 <= ord(token[0][0]) <= 12447 and not 65296 <= ord(token[0][0]) <= 65305 and not 48 <= ord(token[0][0]) <= 57: #а как же этикет?!
+                              if not 65 <= ord(token[0][0]) <= 122 \
+                                 and not 65313 <= ord(token[0][0]) <= 65338 \
+                                 and not 12450 <= ord(token[0][0]) <= 12538 \
+                                 and not 12352 <= ord(token[0][0]) <= 12447 \
+                                 and not 65296 <= ord(token[0][0]) <= 65305 \
+                                 and not 48 <= ord(token[0][0]) <= 57 \
+                                 and token[0] not in stop_words \
+                                 and token[0] not in sanskrit_words \
+                                 and token[0] not in chinese_words \
+                                 and token[0] not in korean_words:
                                     kanji_counter += 1
                                     kanji_list.append(token[0])
                                     #print(token[0], token[12])
@@ -117,15 +137,17 @@ def count_kanji(parsed_txt):
                                     furigana = new_token[0]
                                     if 12450 <= ord(furigana[0]) <= 12538: #если первый символ - это катакана
                                           maybe_kanji_token = parsed_txt[i-1].split('\t')
-                                          if not 65 <= ord(maybe_kanji_token[0][0]) <= 122\
-                                             and not 65313 <= ord(maybe_kanji_token[0][0]) <= 65338\
-                                             and '外' not in maybe_kanji_token[12]:
-                                                maybe_kanji_token = parsed_txt[i-2].split('\t')
-                                                if '外' not in maybe_kanji_token[12]:
-                                                      furigana = '*' + furigana
-                                                      kanji_counter += 1
-                                                      kanji_list.append(furigana)
-                                                      #print(furigana)
+                                          if len(maybe_kanji_token) > 12:
+                                                if not 65 <= ord(maybe_kanji_token[0][0]) <= 122\
+                                                   and not 65313 <= ord(maybe_kanji_token[0][0]) <= 65338\
+                                                   and '外' not in maybe_kanji_token[12]:
+                                                      maybe_kanji_token = parsed_txt[i-2].split('\t')
+                                                      if len(maybe_kanji_token) > 12:
+                                                            if '外' not in maybe_kanji_token[12]:
+                                                                  furigana = '*' + furigana
+                                                                  kanji_counter += 1
+                                                                  kanji_list.append(furigana)
+                                                                  #print(furigana)
                               else:
                                     continue
             if(len(parsed_txt) % 5000 == 0):
@@ -152,7 +174,7 @@ def visualization(result, filename):
       #plt.show()
 
 def main():
-      path = '/home/anna/DH_research_2019-20/Source_test'
+      path = '/home/anna/DH_research_2019-20/Source_for_research'
       files = os.listdir(path)
       for filename in files:
             if not filename.endswith('.txt'):
