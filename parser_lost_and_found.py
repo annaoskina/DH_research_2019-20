@@ -32,6 +32,7 @@ def parse_with_ipadic(clean_txt):
       return tokenized_txt
 
 def count_katakana(parsed_txt1):
+      stop_words = ['ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
       parsed_txt1 = parsed_txt1.split('\n')
       katakana_counter = 0
       katakana_list = []
@@ -66,15 +67,32 @@ def count_katakana(parsed_txt1):
                                           katakana_list.append(token[0])
                   if 1 < len(token) <= 7: #здесь попадается мусор, и я не знаю, как от него избавиться
                         if 12450 <= ord(token[0][0]) <= 12538:
-                              katakana_counter += 1
-                              katakana_list.append(token[0])
+                              if i:
+                                    if parsed_txt1[i-1][0] == '《':
+                                          continue
+                                    else:
+                                          for x in [2, 3, 4]:
+                                                if token[0][:x] == token[0][x:]:
+                                                      continue
+                                                else:
+                                                      if len(token[0]) > 3:
+                                                            if token[0][1] == token[0][2]:
+                                                                  if token[0][2] == token[0][3]:
+                                                                        continue
+                                                                  else:
+                                                                        katakana_counter += 1
+                                                                        katakana_list.append(token[0])
+                                                      else:
+                                                            if token[0] not in stop_words:
+                                                                  katakana_counter += 1
+                                                                  katakana_list.append(token[0]) 
                   if (lines_counter % 5000 == 0):
                         katakana_array.append(katakana_counter)
                         katakana_counter = 0
       katakana_array.append(katakana_counter)
       #print(katakana_list)
       print(len(katakana_list))
-      print(katakana_array)
+      #print(katakana_array)
       return katakana_array
 
 def count_romaji(parsed_txt2):
@@ -85,7 +103,10 @@ def count_romaji(parsed_txt2):
       for token in parsed_txt2:
             lines_counter += 1
             if token[0]:
-                  if 65 <= ord(token[0][0]) <= 122: #включаю латиницу half-width (H)
+                  if 65 <= ord(token[0][0]) <= 91: #включаю латиницу half-width (H) заглавные
+                        romaji_counter += 1
+                        romaji_list.append(token[0])
+                  if 97 <= ord(token[0][0]) <= 122: #включаю латиницу half-width (H) строчные
                         romaji_counter += 1
                         romaji_list.append(token[0])
                   if 65313 <= ord(token[0][0]) <= 65338: #включаю латиницу full-width (Ｈ)
@@ -95,8 +116,8 @@ def count_romaji(parsed_txt2):
                         romaji_array.append(romaji_counter)
                         romaji_counter = 0
       romaji_array.append(romaji_counter)
-      print(romaji_list)
-      print(len(romaji_list))
+      #print(romaji_list)
+      #print(len(romaji_list))
       #print(romaji_array)
       return romaji_array
 
@@ -177,11 +198,11 @@ def main():
             raw_file = open_file(path, filename)
             clean_txt = clean_the_text(raw_file)
             parsed_txt1 = parse_with_kindai(clean_txt)
-            parsed_txt2 = parse_with_ipadic(clean_txt)
+            #parsed_txt2 = parse_with_ipadic(clean_txt)
             #write_result_tsv(filename, parsed_txt)
             count_katakana(parsed_txt1)
-            count_romaji(parsed_txt2)
-            count_kanji(parsed_txt1)
+            #count_romaji(parsed_txt2)
+            #count_kanji(parsed_txt1)
             
 if __name__ == '__main__':
       main()
