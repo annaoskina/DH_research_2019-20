@@ -32,7 +32,7 @@ def parse_with_ipadic(clean_txt):
       return tokenized_txt
 
 def count_katakana(parsed_txt1):
-      stop_words = ['ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
+      stop_words = ['カカン', 'グダ', 'ヅブ', 'チラツ', 'メキ', 'トボ', 'ノメ', 'メカシ', 'ツマラ', 'カアキ', 'エサウ', 'ハハハヽア', 'ホク', 'ムヽ', 'シカク', 'ワハ', 'ハヤセ', 'ワス', 'ケテ', 'キマス', 'デハ', 'キマス', 'ダト', 'ウノハ', 'ナキヲ', 'メシイ', 'ラニ', 'チヲ', 'ズト', 'ダト', 'ウノハ', 'ッタ', 'トシテ', 'ハスル', 'ガナサ', 'レナイ', 'セズ', 'サラケ', 'ベテノ', 'エザル', 'ルベシ', 'セザル', 'ッー', 'リナキ', 'タシカ', 'ホウラ', 'アスノ', 'ゼ', 'グワン', 'ッ', 'ザクリ', 'スポリ', 'ア', 'ダガ', 'アノネ', 'ウロ', 'アイヨ', 'モッケ', 'シッ', 'ナッカ', 'ギゴチ', 'ツラリ', 'ウカ', 'ダッテ', 'ッサ', 'スコシ', 'アリャ', 'イヨー', 'トネー', 'デスガ', 'ソリャ', 'ベッ', 'ネブ', 'ヅック', 'ハハハヽア', 'トテ', 'フラ', 'オヅ', 'サツ', 'モグ', 'モヂ', 'ホヽヽ', 'コセ', 'タヂ', 'マザ', 'ジメ', 'スヤ', 'オロ', 'ムザ', 'ピク', 'ヒヨロ', 'グワン', 'ボツリ', 'グワラ', 'チビリ', 'ヂリ', 'グタリ', 'スツク', 'ッチ', 'フハ', 'クスツ', 'フラ', 'ウマク', 'ツクル', 'フクレ', 'フウン', 'ウガチ', 'スポリ', 'クヅ', 'アバ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'ダッテ', 'ッテモ', 'ウノニ', 'イマス', 'ルカモ', 'グタリ', 'ワヤク', 'ャ', 'スベシ', 'スベキ', 'オドス', 'ロテイ', 'ヴェリ', 'ルソオ', 'ホイ', 'シタミ', 'ナア', 'モヂ', 'モグ', 'ウカ', 'タヂ', 'ムザ', 'クヨ', 'シメシ', 'ザア', 'シイコ', 'ホイ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'マセン', 'ッテ', 'ダッテ', 'ウノニ', 'グタリ', 'ワヤク', 'ズシテ', 'スベキ', 'オドス', 'テク', 'ホイ', 'アンビ', 'ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
       parsed_txt1 = parsed_txt1.split('\n')
       katakana_counter = 0
       katakana_list = []
@@ -85,13 +85,13 @@ def count_katakana(parsed_txt1):
                                                       else:
                                                             if token[0] not in stop_words:
                                                                   katakana_counter += 1
-                                                                  katakana_list.append(token[0]) 
+                                                                  katakana_list.append(token[0])
                   if (lines_counter % 5000 == 0):
                         katakana_array.append(katakana_counter)
                         katakana_counter = 0
       katakana_array.append(katakana_counter)
       #print(katakana_list)
-      print(len(katakana_list))
+      #print(len(katakana_list))
       #print(katakana_array)
       return katakana_array
 
@@ -174,20 +174,17 @@ def count_kanji(parsed_txt1):
       #print(kanji_array)
       return kanji_array
 
-def write_result_tsv (filename, parsed_txt):
+def write_result_tsv (filename, parsed_txt1):
       with open('/home/anna/DH_research_2019-20/Files_tsv_kindai/{}.tsv'.format(filename), 'w', encoding = 'utf-8') as fw:
-            fw.write("{}".format(parsed_txt))
+            fw.write("{}".format(parsed_txt1))
 
-def visualization(result, filename):
-      plt.plot(result[0], 'g', label='katakana', linewidth=3)
-      #print('result[0] = ', result[0])
-      plt.plot(result[1], 'b', label='kanji', linewidth=3)
-      #print('result[1] = ', result[1])
-      plt.plot(result[2], 'red', label='romaji', linewidth=3)
-      #print('result[2] = ', result[2])
+def visualization(katakana, romaji, kanji, filename):
+      plt.plot(katakana, 'g', label='katakana', linewidth=3)
+      plt.plot(romaji, 'red', label='romaji', linewidth=3)
+      plt.plot(kanji, 'b', label='kanji', linewidth=3)
       plt.title(filename)
       plt.savefig('/home/anna/DH_research_2019-20/Results_plot/{}.png'.format(filename))
-      #plt.show()
+      plt.show()
 
 def main():
       path = '/home/anna/DH_research_2019-20/Source_for_research'
@@ -198,11 +195,14 @@ def main():
             raw_file = open_file(path, filename)
             clean_txt = clean_the_text(raw_file)
             parsed_txt1 = parse_with_kindai(clean_txt)
-            #parsed_txt2 = parse_with_ipadic(clean_txt)
-            #write_result_tsv(filename, parsed_txt)
-            count_katakana(parsed_txt1)
-            #count_romaji(parsed_txt2)
-            #count_kanji(parsed_txt1)
+            parsed_txt2 = parse_with_ipadic(clean_txt)
+            write_result_tsv(filename, parsed_txt1)
+            katakana = count_katakana(parsed_txt1)
+            romaji = count_romaji(parsed_txt2)
+            kanji = count_kanji(parsed_txt1)
+            visualization(katakana, romaji, kanji, filename)
+            
+            
             
 if __name__ == '__main__':
       main()
