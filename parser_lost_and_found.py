@@ -32,11 +32,11 @@ def parse_with_ipadic(clean_txt):
       return tokenized_txt
 
 def count_katakana(parsed_txt1):
-      stop_words = ['カカン', 'グダ', 'ヅブ', 'チラツ', 'メキ', 'トボ', 'ノメ', 'メカシ', 'ツマラ', 'カアキ', 'エサウ', 'ハハハヽア', 'ホク', 'ムヽ', 'シカク', 'ワハ', 'ハヤセ', 'ワス', 'ケテ', 'キマス', 'デハ', 'キマス', 'ダト', 'ウノハ', 'ナキヲ', 'メシイ', 'ラニ', 'チヲ', 'ズト', 'ダト', 'ウノハ', 'ッタ', 'トシテ', 'ハスル', 'ガナサ', 'レナイ', 'セズ', 'サラケ', 'ベテノ', 'エザル', 'ルベシ', 'セザル', 'ッー', 'リナキ', 'タシカ', 'ホウラ', 'アスノ', 'ゼ', 'グワン', 'ッ', 'ザクリ', 'スポリ', 'ア', 'ダガ', 'アノネ', 'ウロ', 'アイヨ', 'モッケ', 'シッ', 'ナッカ', 'ギゴチ', 'ツラリ', 'ウカ', 'ダッテ', 'ッサ', 'スコシ', 'アリャ', 'イヨー', 'トネー', 'デスガ', 'ソリャ', 'ベッ', 'ネブ', 'ヅック', 'ハハハヽア', 'トテ', 'フラ', 'オヅ', 'サツ', 'モグ', 'モヂ', 'ホヽヽ', 'コセ', 'タヂ', 'マザ', 'ジメ', 'スヤ', 'オロ', 'ムザ', 'ピク', 'ヒヨロ', 'グワン', 'ボツリ', 'グワラ', 'チビリ', 'ヂリ', 'グタリ', 'スツク', 'ッチ', 'フハ', 'クスツ', 'フラ', 'ウマク', 'ツクル', 'フクレ', 'フウン', 'ウガチ', 'スポリ', 'クヅ', 'アバ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'ダッテ', 'ッテモ', 'ウノニ', 'イマス', 'ルカモ', 'グタリ', 'ワヤク', 'ャ', 'スベシ', 'スベキ', 'オドス', 'ロテイ', 'ヴェリ', 'ルソオ', 'ホイ', 'シタミ', 'ナア', 'モヂ', 'モグ', 'ウカ', 'タヂ', 'ムザ', 'クヨ', 'シメシ', 'ザア', 'シイコ', 'ホイ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'マセン', 'ッテ', 'ダッテ', 'ウノニ', 'グタリ', 'ワヤク', 'ズシテ', 'スベキ', 'オドス', 'テク', 'ホイ', 'アンビ', 'ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
+      stop_words = ['エ', 'カカン', 'グダ', 'ヅブ', 'チラツ', 'メキ', 'トボ', 'ノメ', 'メカシ', 'ツマラ', 'カアキ', 'エサウ', 'ハハハヽア', 'ホク', 'ムヽ', 'シカク', 'ワハ', 'ハヤセ', 'ワス', 'ケテ', 'キマス', 'デハ', 'キマス', 'ダト', 'ウノハ', 'ナキヲ', 'メシイ', 'ラニ', 'チヲ', 'ズト', 'ダト', 'ウノハ', 'ッタ', 'トシテ', 'ハスル', 'ガナサ', 'レナイ', 'セズ', 'サラケ', 'ベテノ', 'エザル', 'ルベシ', 'セザル', 'ッー', 'リナキ', 'タシカ', 'ホウラ', 'アスノ', 'ゼ', 'グワン', 'ッ', 'ザクリ', 'スポリ', 'ア', 'ダガ', 'アノネ', 'ウロ', 'アイヨ', 'モッケ', 'シッ', 'ナッカ', 'ギゴチ', 'ツラリ', 'ウカ', 'ダッテ', 'ッサ', 'スコシ', 'アリャ', 'イヨー', 'トネー', 'デスガ', 'ソリャ', 'ベッ', 'ネブ', 'ヅック', 'ハハハヽア', 'トテ', 'フラ', 'オヅ', 'サツ', 'モグ', 'モヂ', 'ホヽヽ', 'コセ', 'タヂ', 'マザ', 'ジメ', 'スヤ', 'オロ', 'ムザ', 'ピク', 'ヒヨロ', 'グワン', 'ボツリ', 'グワラ', 'チビリ', 'ヂリ', 'グタリ', 'スツク', 'ッチ', 'フハ', 'クスツ', 'フラ', 'ウマク', 'ツクル', 'フクレ', 'フウン', 'ウガチ', 'スポリ', 'クヅ', 'アバ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'ダッテ', 'ッテモ', 'ウノニ', 'イマス', 'ルカモ', 'グタリ', 'ワヤク', 'ャ', 'スベシ', 'スベキ', 'オドス', 'ロテイ', 'ヴェリ', 'ルソオ', 'ホイ', 'シタミ', 'ナア', 'モヂ', 'モグ', 'ウカ', 'タヂ', 'ムザ', 'クヨ', 'シメシ', 'ザア', 'シイコ', 'ホイ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'マセン', 'ッテ', 'ダッテ', 'ウノニ', 'グタリ', 'ワヤク', 'ズシテ', 'スベキ', 'オドス', 'テク', 'ホイ', 'アンビ', 'ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
       parsed_txt1 = parsed_txt1.split('\n')
       katakana_counter = 0
       katakana_list = []
-      katakana_array = []
+      katakana_array = ['katakana']
       lines_counter = 0
       for i, token in enumerate(parsed_txt1):
             lines_counter += 1
@@ -48,12 +48,12 @@ def count_katakana(parsed_txt1):
                                     if i:
                                           if parsed_txt1[i-1][0] == '《':
                                                 continue
+                                          elif parsed_txt1[i-2][0] == '《':
+                                                continue
                                           else:
-                                                katakana_counter += 1
-                                                katakana_list.append(token[0])
-                                    else:
-                                          katakana_counter += 1
-                                          katakana_list.append(token[0])
+                                                if token[0] not in stop_words:
+                                                      katakana_counter += 1
+                                                      katakana_list.append(token[0])
                         elif '固' in token[12]:
                               if 12450 <= ord(token[0][0]) <= 12538: #включаю катакану
                                     if i:
@@ -62,13 +62,12 @@ def count_katakana(parsed_txt1):
                                           else:
                                                 katakana_counter += 1
                                                 katakana_list.append(token[0])
-                                    else:
-                                          katakana_counter += 1
-                                          katakana_list.append(token[0])
                   if 1 < len(token) <= 7: #здесь попадается мусор, и я не знаю, как от него избавиться
                         if 12450 <= ord(token[0][0]) <= 12538:
                               if i:
                                     if parsed_txt1[i-1][0] == '《':
+                                          continue
+                                    elif parsed_txt1[i-2][0] == '《':
                                           continue
                                     else:
                                           for x in [2, 3, 4]:
@@ -86,12 +85,7 @@ def count_katakana(parsed_txt1):
                                                             if token[0] not in stop_words:
                                                                   katakana_counter += 1
                                                                   katakana_list.append(token[0])
-                  if len(parsed_txt1) > 50000:
-                        if (lines_counter % 5000 == 0):
-                              katakana_array.append(katakana_counter)
-                              katakana_counter = 0
-                  else:
-                        if (lines_counter % 1000 == 0):
+                  if (lines_counter % 5000 == 0):
                               katakana_array.append(katakana_counter)
                               katakana_counter = 0
       katakana_array.append(katakana_counter)
@@ -103,7 +97,7 @@ def count_katakana(parsed_txt1):
 def count_romaji(parsed_txt2):
       romaji_counter = 0
       romaji_list = []
-      romaji_array = []
+      romaji_array = ['romaji']
       lines_counter = 0
       for token in parsed_txt2:
             lines_counter += 1
@@ -117,12 +111,7 @@ def count_romaji(parsed_txt2):
                   if 65313 <= ord(token[0][0]) <= 65338: #включаю латиницу full-width (Ｈ)
                         romaji_counter += 1
                         romaji_list.append(token[0])
-                  if len(parsed_txt2) > 50000:
-                        if (lines_counter % 5000 == 0):
-                              romaji_array.append(romaji_counter)
-                              romaji_counter = 0
-                  else:
-                        if (lines_counter % 1000 == 0):
+                  if (lines_counter % 5000 == 0):
                               romaji_array.append(romaji_counter)
                               romaji_counter = 0
       romaji_array.append(romaji_counter)
@@ -139,7 +128,7 @@ def count_kanji(parsed_txt1):
       parsed_txt1 = parsed_txt1.split('\n')
       kanji_counter = 0
       kanji_list = []
-      kanji_array = []
+      kanji_array = ['kanji']
       lines_counter = 0
       for i, token in enumerate(parsed_txt1):
             lines_counter += 1
@@ -175,12 +164,7 @@ def count_kanji(parsed_txt1):
                                                       furigana = '*' + furigana
                                                       kanji_counter += 1
                                                       kanji_list.append(furigana)
-                  if len(parsed_txt1) > 50000:
-                        if (lines_counter % 5000 == 0):
-                              kanji_array.append(kanji_counter)
-                              kanji_counter = 0
-                  else:
-                        if (lines_counter % 1000 == 0):
+                  if (lines_counter % 5000 == 0):
                               kanji_array.append(kanji_counter)
                               kanji_counter = 0
       kanji_array.append(kanji_counter)
@@ -189,16 +173,28 @@ def count_kanji(parsed_txt1):
       #print(kanji_array)
       return kanji_array
 
+def join_in_array(parsed_txt1, parsed_txt2):
+      katakana = count_katakana(parsed_txt1)
+      romaji = count_romaji(parsed_txt2)
+      kanji = count_kanji(parsed_txt1)
+      return katakana, romaji, kanji
+
 def write_result_tsv (filename, parsed_txt1):
       with open('/home/anna/DH_research_2019-20/Files_tsv_kindai/{}.tsv'.format(filename), 'w', encoding = 'utf-8') as fw:
             fw.write("{}".format(parsed_txt1))
+
+def write_csv(filename, result):
+      with open('/home/anna/DH_research_2019-20/Results_csv/{}.csv'.format(filename), 'w', encoding = 'utf-8', newline = '') as csv_file:
+            writer = csv.writer(csv_file, delimiter = ',')
+            for line in result:
+                  writer.writerow(line)
 
 def visualization(katakana, romaji, kanji, filename):
       plt.plot(katakana, 'g', label='katakana', linewidth=3)
       plt.plot(romaji, 'red', label='romaji', linewidth=3)
       plt.plot(kanji, 'b', label='kanji', linewidth=3)
       plt.title(filename)
-      plt.savefig('/home/anna/DH_research_2019-20/Results_new/{}.png'.format(filename))
+      plt.savefig('/home/anna/DH_research_2019-20/Results_5000/{}.png'.format(filename))
       plt.show()
 
 def main():
@@ -215,7 +211,9 @@ def main():
             katakana = count_katakana(parsed_txt1)
             romaji = count_romaji(parsed_txt2)
             kanji = count_kanji(parsed_txt1)
-            visualization(katakana, romaji, kanji, filename)
+            result = join_in_array(parsed_txt1, parsed_txt2)
+            write_csv(filename, result)
+            #visualization(katakana, romaji, kanji, filename)
             
             
             
