@@ -36,7 +36,7 @@ def count_katakana(parsed_txt1):
       parsed_txt1 = parsed_txt1.split('\n')
       katakana_counter = 0
       katakana_list = []
-      katakana_array = ['katakana']
+      katakana_array = []
       lines_counter = 0
       for i, token in enumerate(parsed_txt1):
             lines_counter += 1
@@ -85,7 +85,7 @@ def count_katakana(parsed_txt1):
                                                             if token[0] not in stop_words:
                                                                   katakana_counter += 1
                                                                   katakana_list.append(token[0])
-                  if (lines_counter % 5000 == 0):
+                  if (lines_counter % 2000 == 0):
                               katakana_array.append(katakana_counter)
                               katakana_counter = 0
       katakana_array.append(katakana_counter)
@@ -97,7 +97,7 @@ def count_katakana(parsed_txt1):
 def count_romaji(parsed_txt2):
       romaji_counter = 0
       romaji_list = []
-      romaji_array = ['romaji']
+      romaji_array = []
       lines_counter = 0
       for token in parsed_txt2:
             lines_counter += 1
@@ -111,7 +111,7 @@ def count_romaji(parsed_txt2):
                   if 65313 <= ord(token[0][0]) <= 65338: #включаю латиницу full-width (Ｈ)
                         romaji_counter += 1
                         romaji_list.append(token[0])
-                  if (lines_counter % 5000 == 0):
+                  if (lines_counter % 2000 == 0):
                               romaji_array.append(romaji_counter)
                               romaji_counter = 0
       romaji_array.append(romaji_counter)
@@ -128,7 +128,7 @@ def count_kanji(parsed_txt1):
       parsed_txt1 = parsed_txt1.split('\n')
       kanji_counter = 0
       kanji_list = []
-      kanji_array = ['kanji']
+      kanji_array = []
       lines_counter = 0
       for i, token in enumerate(parsed_txt1):
             lines_counter += 1
@@ -164,7 +164,7 @@ def count_kanji(parsed_txt1):
                                                       furigana = '*' + furigana
                                                       kanji_counter += 1
                                                       kanji_list.append(furigana)
-                  if (lines_counter % 5000 == 0):
+                  if (lines_counter % 2000 == 0):
                               kanji_array.append(kanji_counter)
                               kanji_counter = 0
       kanji_array.append(kanji_counter)
@@ -172,6 +172,10 @@ def count_kanji(parsed_txt1):
       #print(len(kanji_list))
       #print(kanji_array)
       return kanji_array
+
+def count_gairaigo(katakana, romaji, katakana):
+
+      
 
 def join_in_array(parsed_txt1, parsed_txt2):
       katakana = count_katakana(parsed_txt1)
@@ -194,7 +198,7 @@ def visualization(katakana, romaji, kanji, filename):
       plt.plot(romaji, 'red', label='romaji', linewidth=3)
       plt.plot(kanji, 'b', label='kanji', linewidth=3)
       plt.title(filename)
-      plt.savefig('/home/anna/DH_research_2019-20/Results_5000/{}.png'.format(filename))
+      plt.savefig('/home/anna/DH_research_2019-20/Results_2000/{}.png'.format(filename))
       plt.show()
 
 def main():
@@ -207,13 +211,14 @@ def main():
             clean_txt = clean_the_text(raw_file)
             parsed_txt1 = parse_with_kindai(clean_txt)
             parsed_txt2 = parse_with_ipadic(clean_txt)
+            print(len(parsed_txt1))
             #write_result_tsv(filename, parsed_txt1)
             katakana = count_katakana(parsed_txt1)
             romaji = count_romaji(parsed_txt2)
             kanji = count_kanji(parsed_txt1)
-            result = join_in_array(parsed_txt1, parsed_txt2)
-            write_csv(filename, result)
-            #visualization(katakana, romaji, kanji, filename)
+            #result = join_in_array(parsed_txt1, parsed_txt2)
+            #write_csv(filename, result)
+            visualization(katakana, romaji, kanji, filename)
             
             
             
