@@ -3,7 +3,7 @@ df <- readr::read_tsv('https://raw.githubusercontent.com/annaoskina/DH_research_
 
 df %>% 
   mutate(id = 1:n(),
-         new = str_detect("外", X13),
+         new = str_detect("???", X13),
          new = ifelse(is.na(new), FALSE, new)) %>% 
   filter(new) %>% 
   ggplot() +
