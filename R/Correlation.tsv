@@ -1,0 +1,91 @@
+Name of author	Writing	Filename	Year of first publish	Style	katakana-romaji	romaji-kanji	kanji-katakana
+Kikuchi Hiroshi	Mumei sakka no nikki	mumeisakkano_nikki.txt	1918		-0.9449112	0.4193139	-0.6933752
+Tanizaki Junichiro	Shonen	shonen.txt	1911		-0.3823596	-0.3162278	0.4836508
+Natsume Soseki	Kokoro	kokoro.txt	1914		-0.3578712	0.12733756	-0.06882426
+Arishima Takeo	Kain no matsuei	kainno_matsuei.txt	1917		-0.3417338	-0.676802	0.5724554
+Kikuchi Hiroshi	Shinju fujin	shinju_fujin_kyukana.txt	1920		-0.23813879	-0.004247598	0.332433259
+Tayama Katai	Juemon no saigo	juemonno_saigo.txt	1902	naturalism	-0.1644297	-0.3045889	0.01351136
+Mori Ogai	Seinen	seinen.txt	1911		-0.1636067	0.2065469	0.5219282
+Natsume Soseki	Sorekara	sorekara.txt	1909		-0.1397751	-0.2179256	0.0454942
+Futabatei Shimei	Heibon	heibon.txt	1907		-0.12688648	0.08287419	-0.10252724
+Akutagawa Ryunosuke	Kappa	kappa.txt	1927		-0.1215474	-0.1005515	0.9179543
+Kunikida Doppo	Musashino	musashino.txt	1898	naturalism	-0.1147079	0.5	0.9176629
+Natsume Soseki	Rondonto	london.txt	1905		-0.07993676	-0.78994776	0.6743578
+Natsume Soseki	Bocchan	bocchan.txt	1906		-0.05653386	-0.21846297	-0.02043906
+Mori Ogai	Vita sexualis	vita_sexualis.txt	1909		-0.04836497	0.79517194	0.09816326
+Natsume Soseki	Higan sugimade	higansugimade.txt	1912		-0.04295145	-0.1409698	0.4117171
+Kunikida Doppo	Gyuniku to bareisho	gyunikuto_bareisho.txt	1901	realism	-0.03394221	-0.77771377	0.6546537
+Futabatei Shimei	Konjiki Yasha	konjikiyasha.txt	1897	pseudoclassicism	-0.009603426	-0.08183061	0.4019248
+Izumi Kyoka	Onna keiju	onnakeizu.txt	1907		0.051337717	-0.003321557	0.544110237
+Shimazaki Toson	Ie_02	ie_ge.txt	1910	naturalism	0.051520887	0.004216141	0.172139912
+Arishima Takeo	Umareizuru nayami	umareizuru_nayami.txt	1918		0.06751412	-0.2781271	0.5554864
+Tayama Katai	Futon	futon.txt	1907	naturalism, I-novel	0.08402413	-0.03545148	0.86726628
+Natsume Soseki	Kusamakura	kusamakura.txt	1906		0.1227534	-0.29916	-0.07441757
+Natsume Soseki	Wagahai wa neko dearu	wagahaiwa_nekodearu.txt	1905		0.1829585	0.291079	0.3525646
+Futabatei Shimei	Ukigumo	ukigumo.txt	1887	realism	0.216094	0.2065118	0.59471
+Tanizaki Junichiro	Chijin no ai	chijinno_ai.txt	1924		0.2395547	-0.2237263	0.4482855
+Arishima Takeo	Aruonna_kohen	02aru_onna_kohen.txt	1919		0.2895439	-0.1283868	-0.1010267
+Natsume Soseki	Sanshiro	sanshiro.txt	1908		0.3122854	-0.03489241	0.40259969
+Tayama Katai	Inaka kyoshi	inaka_kyoshi.txt	1909	naturalism	0.3780751	0.2709686	0.1918803
+Natsume Soseki	Mon	mon.txt	1910		0.3914871	0.2217266	0.1807902
+Shimazaki Toson	Ie_01	ie_jyo.txt	1908	naturalism	0.4056314	0.1161636	-0.02728946
+Arishima Takeo	Aruonna_zenpen	01aru_onna_zenpen.txt	1919		0.4092266	0.1986317	0.430276
+Natsume Soseki	Kojin	kojin.txt	1912		0.5705102	0.2060029	0.03965026
+Akutagawa Ryunosuke	Haguruma	haguruma.txt	1927		0.6459856	0.8086595	0.6884672
+Tanizaki Junichiro	Manji	manji.txt	1928		0.6596482	0.8632595	0.5302731
+Mori Ogai	Gan	gan.txt	1911		0.8281622	-0.2689438	-0.143693
+Mori Ogai	Moso	moso.txt	1911		0.9916557	0.3857271	0.2635702
+Koda Rohan	Gojyu-no to	gojuno_to.txt	1892	pseudoclassicism, idealism	NA	NA	0.1543033
+Hirotsu Ryuro	Puratohomu	shokojo.txt	1905		NA	NA	NA
+Shimazaki Toson	Hakai	hakai.txt	1908	naturalism	NA	NA	0.5035874
+Shimazaki Toson	Yoake mae_01	01yoakemae1_jo.txt	1929-1935	naturalism	NA	NA	0.1283632
+Shimazaki Toson	Yoake mae_02	02yoakemae1_ge.txt	1929-1935	naturalism	NA	NA	0.2110687
+Shimazaki Toson	Yoake mae_03	03yoakemae2_jo.txt	1929-1935	naturalism	NA	NA	0.5641905
+Shimazaki Toson	Yoake mae_04	04yoakemae2_ge.txt	1929-1935	naturalism	NA	NA	0.2508865
+Higuchi Ichiyo	Take kurabe	takekurabe.txt	1896	romanticism	NA	NA	NA
+Higuchi Ichiyo	Nigorie	nigorie.txt	1895		NA	NA	NA
+Higuchi Ichiyo	Jyusan'ya	jusanya_kyuji.txt	1895		NA	NA	0.9169493
+Izumi Kyoka	Koya hijiri	koyahijiri.txt	1900		NA	NA	NA
+Nagai Kafu	Sumidagawa	sumidagawa.txt	1909	naturalism	NA	NA	-0.03951304
+Kunikida Doppo	Sorachigawa-no kishibe	sorachigawano_kishibe.txt	1902		NA	NA	NA
+Mori Ogai	Abe ichizoku	abe_ichizoku.txt	1913	historical fiction	NA	NA	NA
+Mori Ogai	Sansho dayu	sanshodayu.txt	1915	historical fiction	NA	NA	NA
+Mori Ogai	Takase bune	takasebune.txt	1916	historical fiction	NA	NA	NA
+Mori Ogai	Shibue Chusai	shibue_chusai.txt	1916	historical fiction	NA	NA	0.127915
+Mori Ogai	Maihime	maihime.txt	1890		NA	NA	0.1301007
+Mori Ogai	Utakata no ki	utakatano_ki.txt	1890		NA	NA	0.9999932
+Mori Ogai	Fumizukai	fumizukai.txt	1891		NA	NA	0.9895596
+Mori Ogai	Okitsuya Goemon no isho	okitsu_yagoemonno_isho.txt	1912	historical fiction	NA	NA	NA
+Natsume Soseki	Carlyle_hakubutsukan	carlyle_hakubutsukan.txt	1905		NA	NA	NA
+Natsume Soseki	Nihyakutoka	nihyakutoka.txt	1906		NA	NA	0.8497131
+Natsume Soseki	Gubijinso	gubijinso.txt	1907		NA	NA	0.06841084
+Natsume Soseki	Kofu	kofu.txt	1908		NA	NA	0.434785
+Natsume Soseki	Buncho	buncho.txt	1908		NA	NA	NA
+Natsume Soseki	Yume jyuya	yume_juya.txt	1908		NA	NA	-0.1763689
+Tanizaki Junichiro	Shisei	shisei.txt	1910		NA	NA	NA
+Tanizaki Junichiro	Tade kuu mushi	tade_ku_mushi.txt	1928		NA	NA	0.3211693
+Akutagawa Ryunosuke	Rashomon	rashomon_kyu.txt	1915		NA	NA	NA
+Akutagawa Ryunosuke	Hana	hana.txt	1916		NA	NA	NA
+Akutagawa Ryunosuke	Imogayu	imogayu.txt	1916		NA	NA	NA
+Akutagawa Ryunosuke	Hankachi	hankechi.txt	1916		NA	NA	NA
+Akutagawa Ryunosuke	Tabako to akuma	tabakoto_akuma.txt	1917		NA	NA	NA
+Akutagawa Ryunosuke	Jigokuhen	jigokuhen_shohan.txt	1918		NA	NA	NA
+Akutagawa Ryunosuke	Kumo no ito	kumono_ito.txt	1918		NA	NA	NA
+Akutagawa Ryunosuke	Chuto	chuto.txt	1917		NA	NA	NA
+Akutagawa Ryunosuke	Gesaku zanmai	gesaku_zanmai.txt	1917		NA	NA	NA
+Akutagawa Ryunosuke	Hokyonin no shi	hokyoninno_shi.txt	1918		NA	NA	NA
+Akutagawa Ryunosuke	Kare no sho	karenosho.txt	1918		NA	NA	NA
+Akutagawa Ryunosuke	Kirishitohoro shoninden	kirishitohoro_shoninden.txt	1919		NA	NA	NA
+Akutagawa Ryunosuke	Mikan	mikan.txt	1919		NA	NA	NA
+Akutagawa Ryunosuke	Butokai	butokai.txt	1920		NA	NA	NA
+Akutagawa Ryunosuke	Aki	aki.txt	1920		NA	NA	NA
+Akutagawa Ryunosuke	Toshishun	toshishun.txt	1920		NA	NA	NA
+Akutagawa Ryunosuke	Yabu no naka	yabuno_naka.txt	1922		NA	NA	NA
+Akutagawa Ryunosuke	Tokokko	torokko.txt	1922		NA	NA	NA
+Akutagawa Ryunosuke	Yasukichi no techo kara	yasukichino_techokara.txt	1923		NA	NA	NA
+Akutagawa Ryunosuke	Genkaku sanbo	genkaku_sanbo.txt	1927		NA	NA	NA
+Kikuchi Hiroshi	Tadanaokyo joki	tadanaokyo_gyojoki.txt	1918		NA	NA	NA
+Kikuchi Hiroshi	Onshu no kanata ni	onshuno_kanatani.txt	1919		NA	NA	NA
+Arishima Takeo	Kankan mushi	kankanmusi.txt	1910		NA	NA	NA
+Arishima Takeo	Chiisaki monoe	chiisaki_monoe.txt	1918		NA	NA	NA
+Akutagawa Ryunosuke	Majutsu	majutsu.txt	1920		NA	NA	NA
