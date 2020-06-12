@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from pymecab.pymecab import PyMecab
 
 def open_file(path, filename):
-      with open('/home/anna/DH_research_2019-20/Source_for_research/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
-            print('\n', filename)
+      with open('/home/anna/DH_research_2019_20/Source_for_research/{}'.format(filename), 'r', encoding = 'Shift-JIS') as f:
+            #print('\n', filename)
             raw_file = f.read()
       return raw_file
 
@@ -29,9 +29,11 @@ def parse_with_ipadic(clean_txt):
       tokenized_txt = []
       for token in mecab.tokenize(clean_txt):
             tokenized_txt.append(token)
+      print(tokenized_txt)
       return tokenized_txt
 
 def count_katakana(parsed_txt1):
+      k = 1
       stop_words = ['エ', 'カカン', 'グダ', 'ヅブ', 'チラツ', 'メキ', 'トボ', 'ノメ', 'メカシ', 'ツマラ', 'カアキ', 'エサウ', 'ハハハヽア', 'ホク', 'ムヽ', 'シカク', 'ワハ', 'ハヤセ', 'ワス', 'ケテ', 'キマス', 'デハ', 'キマス', 'ダト', 'ウノハ', 'ナキヲ', 'メシイ', 'ラニ', 'チヲ', 'ズト', 'ダト', 'ウノハ', 'ッタ', 'トシテ', 'ハスル', 'ガナサ', 'レナイ', 'セズ', 'サラケ', 'ベテノ', 'エザル', 'ルベシ', 'セザル', 'ッー', 'リナキ', 'タシカ', 'ホウラ', 'アスノ', 'ゼ', 'グワン', 'ッ', 'ザクリ', 'スポリ', 'ア', 'ダガ', 'アノネ', 'ウロ', 'アイヨ', 'モッケ', 'シッ', 'ナッカ', 'ギゴチ', 'ツラリ', 'ウカ', 'ダッテ', 'ッサ', 'スコシ', 'アリャ', 'イヨー', 'トネー', 'デスガ', 'ソリャ', 'ベッ', 'ネブ', 'ヅック', 'ハハハヽア', 'トテ', 'フラ', 'オヅ', 'サツ', 'モグ', 'モヂ', 'ホヽヽ', 'コセ', 'タヂ', 'マザ', 'ジメ', 'スヤ', 'オロ', 'ムザ', 'ピク', 'ヒヨロ', 'グワン', 'ボツリ', 'グワラ', 'チビリ', 'ヂリ', 'グタリ', 'スツク', 'ッチ', 'フハ', 'クスツ', 'フラ', 'ウマク', 'ツクル', 'フクレ', 'フウン', 'ウガチ', 'スポリ', 'クヅ', 'アバ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'ダッテ', 'ッテモ', 'ウノニ', 'イマス', 'ルカモ', 'グタリ', 'ワヤク', 'ャ', 'スベシ', 'スベキ', 'オドス', 'ロテイ', 'ヴェリ', 'ルソオ', 'ホイ', 'シタミ', 'ナア', 'モヂ', 'モグ', 'ウカ', 'タヂ', 'ムザ', 'クヨ', 'シメシ', 'ザア', 'シイコ', 'ホイ', 'ダアス', 'アバ', 'サレタ', 'ダカラ', 'ジ', 'ノタメ', 'ドウセ', 'ッテ', 'マセン', 'ッテ', 'ダッテ', 'ウノニ', 'グタリ', 'ワヤク', 'ズシテ', 'スベキ', 'オドス', 'テク', 'ホイ', 'アンビ', 'ェッ', 'ハヽヽ', 'ホヽ', 'チョッ', 'オ', 'ョ', 'ゥ', 'コッ', 'ホ', 'カッ', 'エ', 'チョッキ', 'トサ', 'トリ', 'オー', 'ブクッ', 'ボコン', 'シュン', 'サン', 'アイ', 'レクレ', 'グッ', 'ジュ', 'ヒュウ', 'ピュー', 'チリン', 'ット', 'キキー', 'オ']
       parsed_txt1 = parsed_txt1.split('\n')
       katakana_counter = 0
@@ -85,16 +87,20 @@ def count_katakana(parsed_txt1):
                                                             if token[0] not in stop_words:
                                                                   katakana_counter += 1
                                                                   katakana_list.append(token[0])
-                  if (lines_counter % 2000 == 0):
-                              katakana_array.append(katakana_counter)
-                              katakana_counter = 0
+                  if (lines_counter % 5000 == 0):
+                        #print(k, ': ', katakana_list)
+                        k += 1
+                        katakana_array.append(katakana_counter)
+                        katakana_counter = 0
+                        #katakana_list = []
       katakana_array.append(katakana_counter)
       #print(katakana_list)
-      #print(len(katakana_list))
+      no_katakana = len(katakana_list)
       #print(katakana_array)
-      return katakana_array
+      return no_katakana
 
 def count_romaji(parsed_txt2):
+      x = 1
       romaji_counter = 0
       romaji_list = []
       romaji_array = []
@@ -111,16 +117,20 @@ def count_romaji(parsed_txt2):
                   if 65313 <= ord(token[0][0]) <= 65338: #включаю латиницу full-width (Ｈ)
                         romaji_counter += 1
                         romaji_list.append(token[0])
-                  if (lines_counter % 2000 == 0):
-                              romaji_array.append(romaji_counter)
-                              romaji_counter = 0
+                  if (lines_counter % 5000 == 0):
+                        #print(x, ': ', romaji_list)
+                        romaji_array.append(romaji_counter)
+                        romaji_counter = 0
+                        #romaji_list = []
+                        x += 1
       romaji_array.append(romaji_counter)
       #print(romaji_list)
-      #print(len(romaji_list))
+      no_romaji = len(romaji_list)
       #print(romaji_array)
-      return romaji_array
+      return no_romaji
 
 def count_kanji(parsed_txt1):
+      x = 1
       stop_words = ['恨', '己ら', '幇', '疊', '汗', '八', '主思', '打', '峰', '粥', '負', '志', '丘']
       sanskrit_words = ['陀羅尼', '舎利', '仏陀', '波羅葦僧', '波羅密', '迦陵頻伽', '修羅', '奈落', '涅槃', '世尊', '維摩', '琉璃', '南無', '弥陀', '比丘尼', '卒都婆', '卒堵婆', '阿弥', '玻璃', '菩薩', '良人', '檀那', '旦', '旦那', '于蘭盆', '盂蘭盆', '羅漢', '陀羅', '伽藍', '刹那', '沙弥', '沙門', '痘痕', '天麩羅', '天ぷら', '三昧', '伽羅', '般若', '卒塔婆', '袈裟', '塔婆', '娑婆', '達磨', '夜叉', '菩提', '婆羅門']
       chinese_words = ['摩訶', '損徳', '拉麺', '鴛鴦', '善知鳥', '山神', '姉夫']
@@ -164,18 +174,17 @@ def count_kanji(parsed_txt1):
                                                       furigana = '*' + furigana
                                                       kanji_counter += 1
                                                       kanji_list.append(furigana)
-                  if (lines_counter % 2000 == 0):
-                              kanji_array.append(kanji_counter)
-                              kanji_counter = 0
+                  if (lines_counter % 5000 == 0):
+                        #print(x, ': ', kanji_list)
+                        kanji_array.append(kanji_counter)
+                        kanji_counter = 0
+                        #kanji_list = []
+                        x += 1
       kanji_array.append(kanji_counter)
       #print(kanji_list)
-      #print(len(kanji_list))
+      no_kanji = len(kanji_list)
       #print(kanji_array)
-      return kanji_array
-
-def count_gairaigo(katakana, romaji, katakana):
-
-      
+      return no_kanji
 
 def join_in_array(parsed_txt1, parsed_txt2):
       katakana = count_katakana(parsed_txt1)
@@ -198,12 +207,13 @@ def visualization(katakana, romaji, kanji, filename):
       plt.plot(romaji, 'red', label='romaji', linewidth=3)
       plt.plot(kanji, 'b', label='kanji', linewidth=3)
       plt.title(filename)
-      plt.savefig('/home/anna/DH_research_2019-20/Results_2000/{}.png'.format(filename))
+      plt.savefig('/home/anna/DH_research_2019_20/Results_2000/{}.png'.format(filename))
       plt.show()
 
 def main():
-      path = '/home/anna/DH_research_2019-20/Source_for_research'
+      path = '/home/anna/DH_research_2019_20/Source_for_research'
       files = os.listdir(path)
+      result_count = ''
       for filename in files:
             if not filename.endswith('.txt'):
                   continue
@@ -211,16 +221,23 @@ def main():
             clean_txt = clean_the_text(raw_file)
             parsed_txt1 = parse_with_kindai(clean_txt)
             parsed_txt2 = parse_with_ipadic(clean_txt)
-            print(len(parsed_txt1))
+            no_words = len(parsed_txt2)
+            #print(len(parsed_txt1))
             #write_result_tsv(filename, parsed_txt1)
-            katakana = count_katakana(parsed_txt1)
-            romaji = count_romaji(parsed_txt2)
-            kanji = count_kanji(parsed_txt1)
+            no_katakana = count_katakana(parsed_txt1)
+            no_romaji = count_romaji(parsed_txt2)
+            no_kanji = count_kanji(parsed_txt1)
+            result_count += '{}, {}, {}, {}, {}\n'.format(filename, no_words, no_katakana, no_romaji, no_kanji)
+            #print(no_katakana / no_words, no_romaji / no_words, no_kanji / no_words)
             #result = join_in_array(parsed_txt1, parsed_txt2)
             #write_csv(filename, result)
-            visualization(katakana, romaji, kanji, filename)
-            
-            
+            #visualization(katakana, romaji, kanji, filename)
+      print(result_count)
+      with open('/home/anna/DH_research_2019_20/Results_count.csv', 'w', encoding = 'utf-8') as wfile:
+            wfile.write(result_count)
+            #writer = csv.writer(csv_file, delimiter = ',')
+            #for line in result_count:
+             #     writer.writerow(line)
             
 if __name__ == '__main__':
       main()
