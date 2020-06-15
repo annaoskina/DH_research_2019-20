@@ -1,91 +1,91 @@
-Author,Writing,Filename,Year,Style,katakana_romaji,romaji_kanji,kanji_katakana
-Akutagawa Ryunosuke,Kappa,kappa.txt,1927,neorealism,-0.1215474,-0.1005515,0.9179543
-Akutagawa Ryunosuke,Haguruma,haguruma.txt,1927,neorealism,0.6459856,0.8086595,0.6884672
-Akutagawa Ryunosuke,Rashomon,rashomon_kyu.txt,1915,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Hana,hana.txt,1916,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Imogayu,imogayu.txt,1916,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Hankachi,hankechi.txt,1916,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Tabako to akuma,tabakoto_akuma.txt,1917,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Jigokuhen,jigokuhen_shohan.txt,1918,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Kumo no ito,kumono_ito.txt,1918,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Chuto,chuto.txt,1917,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Gesaku zanmai,gesaku_zanmai.txt,1917,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Hokyonin no shi,hokyoninno_shi.txt,1918,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Kare no sho,karenosho.txt,1918,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Kirishitohoro shoninden,kirishitohoro_shoninden.txt,1919,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Mikan,mikan.txt,1919,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Butokai,butokai.txt,1920,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Aki,aki.txt,1920,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Toshishun,toshishun.txt,1920,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Yabu no naka,yabuno_naka.txt,1922,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Tokokko,torokko.txt,1922,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Yasukichi no techo kara,yasukichino_techokara.txt,1923,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Genkaku sanbo,genkaku_sanbo.txt,1927,neorealism,NA,NA,NA
-Akutagawa Ryunosuke,Majutsu,majutsu.txt,1920,neorealism,NA,NA,NA
-Arishima Takeo,Kain no matsuei,kainno_matsuei.txt,1917,shirakaba,-0.3417338,-0.676802,0.5724554
-Arishima Takeo,Umareizuru nayami,umareizuru_nayami.txt,1918,shirakaba,0.06751412,-0.2781271,0.5554864
-Arishima Takeo,Aruonna_kohen,02aru_onna_kohen.txt,1919,shirakaba,0.2895439,-0.1283868,-0.1010267
-Arishima Takeo,Aruonna_zenpen,01aru_onna_zenpen.txt,1919,shirakaba,0.4092266,0.1986317,0.430276
-Arishima Takeo,Kankan mushi,kankanmusi.txt,1910,shirakaba,NA,NA,NA
-Arishima Takeo,Chiisaki monoe,chiisaki_monoe.txt,1918,shirakaba,NA,NA,NA
-Futabatei Shimei,Heibon,heibon.txt,1907,realism,-0.12688648,0.08287419,-0.10252724
-Futabatei Shimei,Konjiki Yasha,konjikiyasha.txt,1897,pseudoclassicism,-0.009603426,-0.08183061,0.4019248
-Futabatei Shimei,Ukigumo,ukigumo.txt,1887,realism,0.216094,0.2065118,0.59471
-Higuchi Ichiyo,Take kurabe,takekurabe.txt,1896,pseudoclassicism,NA,NA,NA
-Higuchi Ichiyo,Nigorie,nigorie.txt,1895,pseudoclassicism,NA,NA,NA
-Higuchi Ichiyo,Jyusan'ya,jusanya_kyuji.txt,1895,pseudoclassicism,NA,NA,0.9169493
-Hirotsu Ryuro,Puratohomu,shokojo.txt,1905,romanticism,NA,NA,NA
-Izumi Kyoka,Onna keiju,onnakeizu.txt,1907,romanticism,0.051337717,-0.003321557,0.544110237
-Izumi Kyoka,Koya hijiri,koyahijiri.txt,1900,romanticism,NA,NA,NA
-Kikuchi Hiroshi,Mumei sakka no nikki,mumeisakkano_nikki.txt,1918,neorealism,-0.9449112,0.4193139,-0.6933752
-Kikuchi Hiroshi,Shinju fujin,shinju_fujin_kyukana.txt,1920,neorealism,-0.23813879,-0.004247598,0.332433259
-Kikuchi Hiroshi,Tadanaokyo joki,tadanaokyo_gyojoki.txt,1918,neorealism,NA,NA,NA
-Kikuchi Hiroshi,Onshu no kanata ni,onshuno_kanatani.txt,1919,neorealism,NA,NA,NA
-Koda Rohan,Gojyu-no to,gojuno_to.txt,1892,pseudoclassicism,NA,NA,0.1543033
-Kunikida Doppo,Musashino,musashino.txt,1898,romanticism,-0.1147079,0.5,0.9176629
-Kunikida Doppo,Gyuniku to bareisho,gyunikuto_bareisho.txt,1901,romanticism,-0.03394221,-0.77771377,0.6546537
-Kunikida Doppo,Sorachigawa-no kishibe,sorachigawano_kishibe.txt,1902,romanticism,NA,NA,NA
-Mori Ogai,Seinen,seinen.txt,1911,parnassianism,-0.1636067,0.2065469,0.5219282
-Mori Ogai,Vita sexualis,vita_sexualis.txt,1909,parnassianism,-0.04836497,0.79517194,0.09816326
-Mori Ogai,Gan,gan.txt,1911,parnassianism,0.8281622,-0.2689438,-0.143693
-Mori Ogai,Moso,moso.txt,1911,parnassianism,0.9916557,0.3857271,0.2635702
-Mori Ogai,Abe ichizoku,abe_ichizoku.txt,1913,historical fiction,NA,NA,NA
-Mori Ogai,Sansho dayu,sanshodayu.txt,1915,historical fiction,NA,NA,NA
-Mori Ogai,Takase bune,takasebune.txt,1916,parnassianism,NA,NA,NA
-Mori Ogai,Shibue Chusai,shibue_chusai.txt,1916,historical fiction,NA,NA,0.127915
-Mori Ogai,Maihime,maihime.txt,1890,romanticism,NA,NA,0.1301007
-Mori Ogai,Utakata no ki,utakatano_ki.txt,1890,romanticism,NA,NA,0.9999932
-Mori Ogai,Fumizukai,fumizukai.txt,1891,romanticism,NA,NA,0.9895596
-Mori Ogai,Okitsuya Goemon no isho,okitsu_yagoemonno_isho.txt,1912,historical fiction,NA,NA,NA
-Nagai Kafu,Sumidagawa,sumidagawa.txt,1909,aestheticism,NA,NA,-0.03951304
-Natsume Soseki,Kokoro,kokoro.txt,1914,parnassianism,-0.3578712,0.12733756,-0.06882426
-Natsume Soseki,Sorekara,sorekara.txt,1909,parnassianism,-0.1397751,-0.2179256,0.0454942
-Natsume Soseki,Rondonto,london.txt,1905,romanticism,-0.07993676,-0.78994776,0.6743578
-Natsume Soseki,Bocchan,bocchan.txt,1906,romanticism,-0.05653386,-0.21846297,-0.02043906
-Natsume Soseki,Higan sugimade,higansugimade.txt,1912,parnassianism,-0.04295145,-0.1409698,0.4117171
-Natsume Soseki,Kusamakura,kusamakura.txt,1906,parnassianism,0.1227534,-0.29916,-0.07441757
-Natsume Soseki,Wagahai wa neko dearu,wagahaiwa_nekodearu.txt,1905,romanticism,0.1829585,0.291079,0.3525646
-Natsume Soseki,Sanshiro,sanshiro.txt,1908,parnassianism,0.3122854,-0.03489241,0.40259969
-Natsume Soseki,Mon,mon.txt,1910,parnassianism,0.3914871,0.2217266,0.1807902
-Natsume Soseki,Kojin,kojin.txt,1912,parnassianism,0.5705102,0.2060029,0.03965026
-Natsume Soseki,Carlyle_hakubutsukan,carlyle_hakubutsukan.txt,1905,romanticism,NA,NA,NA
-Natsume Soseki,Nihyakutoka,nihyakutoka.txt,1906,romanticism,NA,NA,0.8497131
-Natsume Soseki,Gubijinso,gubijinso.txt,1907,parnassianism,NA,NA,0.06841084
-Natsume Soseki,Kofu,kofu.txt,1908,parnassianism,NA,NA,0.434785
-Natsume Soseki,Buncho,buncho.txt,1908,parnassianism,NA,NA,NA
-Natsume Soseki,Yume jyuya,yume_juya.txt,1908,parnassianism,NA,NA,-0.1763689
-Shimazaki Toson,Ie_02,ie_ge.txt,1910,naturalism,0.051520887,0.004216141,0.172139912
-Shimazaki Toson,Ie_01,ie_jyo.txt,1908,naturalism,0.4056314,0.1161636,-0.02728946
-Shimazaki Toson,Hakai,hakai.txt,1908,naturalism,NA,NA,0.5035874
-Shimazaki Toson,Yoake mae_01,01yoakemae1_jo.txt,1929,naturalism,NA,NA,0.1283632
-Shimazaki Toson,Yoake mae_02,02yoakemae1_ge.txt,1929,naturalism,NA,NA,0.2110687
-Shimazaki Toson,Yoake mae_03,03yoakemae2_jo.txt,1929,naturalism,NA,NA,0.5641905
-Shimazaki Toson,Yoake mae_04,04yoakemae2_ge.txt,1929,naturalism,NA,NA,0.2508865
-Tanizaki Junichiro,Shonen,shonen.txt,1911,aestheticism,-0.3823596,-0.3162278,0.4836508
-Tanizaki Junichiro,Chijin no ai,chijinno_ai.txt,1924,satanism,0.2395547,-0.2237263,0.4482855
-Tanizaki Junichiro,Manji,manji.txt,1928,aestheticism,0.6596482,0.8632595,0.5302731
-Tanizaki Junichiro,Shisei,shisei.txt,1910,aestheticism,NA,NA,NA
-Tanizaki Junichiro,Tade kuu mushi,tade_ku_mushi.txt,1928,aestheticism,NA,NA,0.3211693
-Tayama Katai,Juemon no saigo,juemonno_saigo.txt,1902,naturalism,-0.1644297,-0.3045889,0.01351136
-Tayama Katai,Futon,futon.txt,1907,naturalism,0.08402413,-0.03545148,0.86726628
-Tayama Katai,Inaka kyoshi,inaka_kyoshi.txt,1909,naturalism,0.3780751,0.2709686,0.1918803
+Author,Writing,Filename,Year,Style,katakana_romaji,romaji_kanji,kanji_katakana,No_words,No_katakana,No_romaji,No_kanji,ratio_katakana,ratio_romaji,ratio_kanji,ratio_all_gairaigo
+Arishima Takeo,Aruonna_zenpen,01aru_onna_zenpen.txt,1919,shirakaba,0.4092266,0.1986317,0.430276,101699,378,94,54,0.003716850706497,0.000924296207436,0.000530978672357,0.005172125586289
+Shimazaki Toson,Yoake mae_01,01yoakemae1_jo.txt,1929,naturalism,NA,NA,0.1283632,154408,167,0,35,0.001081550178747,0,0.000226672193151,0.001308222371898
+Arishima Takeo,Aruonna_kohen,02aru_onna_kohen.txt,1919,shirakaba,0.2895439,-0.1283868,-0.1010267,139432,204,10,23,0.001463078776751,7.17195478799702E-05,0.000164954960124,0.001699753284755
+Shimazaki Toson,Yoake mae_02,02yoakemae1_ge.txt,1929,naturalism,NA,NA,0.2110687,140686,104,0,24,0.000739234891887,0,0.000170592667359,0.000909827559245
+Shimazaki Toson,Yoake mae_03,03yoakemae2_jo.txt,1929,naturalism,NA,NA,0.5641905,134960,440,0,30,0.003260225251927,0,0.000222288085359,0.003482513337285
+Shimazaki Toson,Yoake mae_04,04yoakemae2_ge.txt,1929,naturalism,NA,NA,0.2508865,158081,77,0,21,0.000487092060399,0,0.0001328432892,0.000619935349599
+Mori Ogai,Abe ichizoku,abe_ichizoku.txt,1913,historical fiction,NA,NA,NA,21759,0,0,0,0,0,0,0
+Akutagawa Ryunosuke,Aki,aki.txt,1920,neorealism,NA,NA,NA,8351,10,0,8,0.00119746138187,0,0.000957969105496,0.002155430487367
+Natsume Soseki,Bocchan,bocchan.txt,1906,romanticism,-0.05653386,-0.21846297,-0.02043906,69079,289,9,22,0.004183615860102,0.00013028561502,0.000318475947828,0.004632377422951
+Natsume Soseki,Buncho,buncho.txt,1908,parnassianism,NA,NA,NA,8820,8,0,11,0.000907029478458,0,0.00124716553288,0.002154195011338
+Akutagawa Ryunosuke,Butokai,butokai.txt,1920,neorealism,NA,NA,NA,3914,20,7,13,0.005109862033725,0.001788451711804,0.003321410321921,0.01021972406745
+Natsume Soseki,Carlyle_hakubutsukan,carlyle_hakubutsukan.txt,1905,romanticism,NA,NA,NA,5592,76,0,21,0.013590844062947,0,0.003755364806867,0.017346208869814
+Arishima Takeo,Chiisaki monoe,chiisaki_monoe.txt,1918,shirakaba,NA,NA,NA,7389,9,10,2,0.00121802679659,0.001353363107322,0.000270672621464,0.002842062525376
+Tanizaki Junichiro,Chijin no ai,chijinno_ai.txt,1924,satanism,0.2395547,-0.2237263,0.4482855,126689,1441,91,51,0.01137431031897,0.000718294405986,0.000402560601157,0.012495165326114
+Akutagawa Ryunosuke,Chuto,chuto.txt,1917,neorealism,NA,NA,NA,36668,0,0,3,0,0,8.18152067197556E-05,8.18152067197556E-05
+Mori Ogai,Fumizukai,fumizukai.txt,1891,romanticism,NA,NA,0.9895596,11359,65,0,35,0.005722334712563,0,0.003081257152918,0.008803591865481
+Tayama Katai,Futon,futon.txt,1907,naturalism,0.08402413,-0.03545148,0.86726628,35203,55,2,35,0.001562366843735,5.68133397721785E-05,0.000994233446013,0.00261341362952
+Mori Ogai,Gan,gan.txt,1911,parnassianism,0.8281622,-0.2689438,-0.143693,56479,22,43,33,0.000389525310292,0.000761344924662,0.000584287965438,0.001735158200393
+Akutagawa Ryunosuke,Genkaku sanbo,genkaku_sanbo.txt,1927,neorealism,NA,NA,NA,9222,12,3,1,0.001301236174366,0.000325309043591,0.000108436347864,0.001734981565821
+Akutagawa Ryunosuke,Gesaku zanmai,gesaku_zanmai.txt,1917,neorealism,NA,NA,NA,16007,0,0,11,0,0,0.000687199350284,0.000687199350284
+Koda Rohan,Gojyu-no to,gojuno_to.txt,1892,pseudoclassicism,NA,NA,0.1543033,45675,9,0,15,0.000197044334975,0,0.000328407224959,0.000525451559934
+Natsume Soseki,Gubijinso,gubijinso.txt,1907,parnassianism,NA,NA,0.06841084,163592,115,0,312,0.000702968360311,0,0.001907183725366,0.002610152085677
+Kunikida Doppo,Gyuniku to bareisho,gyunikuto_bareisho.txt,1901,romanticism,-0.03394221,-0.77771377,0.6546537,13147,43,53,24,0.003270708146345,0.004031337947821,0.001825511523542,0.009127557617707
+Akutagawa Ryunosuke,Haguruma,haguruma.txt,1927,neorealism,0.6459856,0.8086595,0.6884672,18473,212,65,54,0.011476208520544,0.003518648838846,0.002923185189195,0.017918042548585
+Shimazaki Toson,Hakai,hakai.txt,1908,naturalism,NA,NA,0.5035874,173683,16,0,120,9.212185418262E-05,0,0.00069091390637,0.000783035760552
+Akutagawa Ryunosuke,Hana,hana.txt,1916,neorealism,NA,NA,NA,4585,0,0,0,0,0,0,0
+Akutagawa Ryunosuke,Hankachi,hankechi.txt,1916,neorealism,NA,NA,NA,5398,24,0,16,0.004446091144868,0,0.002964060763246,0.007410151908114
+Futabatei Shimei,Heibon,heibon.txt,1907,realism,-0.12688648,0.08287419,-0.10252724,73139,63,6,25,0.000861373548996,8.20355760948331E-05,0.000341814900395,0.001285224025486
+Natsume Soseki,Higan sugimade,higansugimade.txt,1912,parnassianism,-0.04295145,-0.1409698,0.4117171,152967,110,16,208,0.000719109350383,0.000104597723692,0.001359770407997,0.002183477482071
+Akutagawa Ryunosuke,Hokyonin no shi,hokyoninno_shi.txt,1918,neorealism,NA,NA,NA,7776,0,7,20,0,0.000900205761317,0.002572016460905,0.003472222222222
+Shimazaki Toson,Ie_02,ie_ge.txt,1910,naturalism,0.051520887,0.004216141,0.172139912,112193,58,15,70,0.000516966299145,0.000133698180813,0.000623924843796,0.001274589323755
+Shimazaki Toson,Ie_01,ie_jyo.txt,1908,naturalism,0.4056314,0.1161636,-0.02728946,101232,44,17,88,0.000434645171487,0.000167931088984,0.000869290342975,0.001471866603446
+Akutagawa Ryunosuke,Imogayu,imogayu.txt,1916,neorealism,NA,NA,NA,11891,2,0,1,0.000168194432764,0,8.40972163821377E-05,0.000252291649146
+Tayama Katai,Inaka kyoshi,inaka_kyoshi.txt,1909,naturalism,0.3780751,0.2709686,0.1918803,113313,227,21,106,0.002003300592165,0.000185327367557,0.000935461950526,0.003124089910249
+Akutagawa Ryunosuke,Jigokuhen,jigokuhen_shohan.txt,1918,neorealism,NA,NA,NA,20029,0,0,0,0,0,0,0
+Tayama Katai,Juemon no saigo,juemonno_saigo.txt,1902,naturalism,-0.1644297,-0.3045889,0.01351136,36913,17,1,45,0.000460542356351,2.70907268442012E-05,0.001219082707989,0.001706715791185
+Higuchi Ichiyo,Jyusan'ya,jusanya_kyuji.txt,1895,pseudoclassicism,NA,NA,0.9169493,20688,3,0,7,0.000145011600928,0,0.000338360402166,0.000483372003094
+Arishima Takeo,Kain no matsuei,kainno_matsuei.txt,1917,shirakaba,-0.3417338,-0.676802,0.5724554,25541,25,6,14,0.000978818370463,0.000234916408911,0.000548138287459,0.001761873066834
+Arishima Takeo,Kankan mushi,kankanmusi.txt,1910,shirakaba,NA,NA,NA,7814,150,0,12,0.019196314307653,0,0.001535705144612,0.020732019452265
+Akutagawa Ryunosuke,Kappa,kappa.txt,1927,neorealism,-0.1215474,-0.1005515,0.9179543,24776,843,37,42,0.034024862770423,0.001493380690991,0.001695188892477,0.037213432353891
+Akutagawa Ryunosuke,Kare no sho,karenosho.txt,1918,neorealism,NA,NA,NA,6232,0,0,0,0,0,0,0
+Akutagawa Ryunosuke,Kirishitohoro shoninden,kirishitohoro_shoninden.txt,1919,neorealism,NA,NA,NA,10333,0,0,2,0,0,0.000193554630795,0.000193554630795
+Natsume Soseki,Kofu,kofu.txt,1908,parnassianism,NA,NA,0.434785,107412,139,0,80,0.001294082597848,0,0.000744795739768,0.002038878337616
+Natsume Soseki,Kojin,kojin.txt,1912,parnassianism,0.5705102,0.2060029,0.03965026,172482,117,106,157,0.000678331651998,0.000614556881298,0.000910239909092,0.002203128442388
+Natsume Soseki,Kokoro,kokoro.txt,1914,parnassianism,-0.3578712,0.12733756,-0.06882426,123220,38,411,57,0.000308391494887,0.003335497484175,0.000462587242331,0.004106476221393
+Futabatei Shimei,Konjiki Yasha,konjikiyasha.txt,1897,pseudoclassicism,-0.009603426,-0.08183061,0.4019248,255116,112,7,222,0.000439015977046,2.74384985653585E-05,0.000870192383073,0.001336646858684
+Izumi Kyoka,Koya hijiri,koyahijiri.txt,1900,romanticism,NA,NA,NA,57211,0,0,16,0,0,0.000279666497701,0.000279666497701
+Akutagawa Ryunosuke,Kumo no ito,kumono_ito.txt,1918,neorealism,NA,NA,NA,2135,0,0,0,0,0,0,0
+Natsume Soseki,Kusamakura,kusamakura.txt,1906,parnassianism,0.1227534,-0.29916,-0.07441757,72382,70,70,32,0.000967091265784,0.000967091265784,0.000442098864359,0.002376281395927
+Natsume Soseki,Rondonto,london.txt,1905,romanticism,-0.07993676,-0.78994776,0.6743578,13591,84,167,22,0.006180560665146,0.012287543227136,0.001618718269443,0.020086822161725
+Mori Ogai,Maihime,maihime.txt,1890,romanticism,NA,NA,0.1301007,11880,81,0,15,0.006818181818182,0,0.001262626262626,0.008080808080808
+Akutagawa Ryunosuke,Majutsu,majutsu.txt,1920,neorealism,NA,NA,NA,5284,123,0,20,0.02327781983346,0,0.003785011355034,0.027062831188494
+Tanizaki Junichiro,Manji,manji.txt,1928,aestheticism,0.6596482,0.8632595,0.5302731,91431,217,53,8,0.002373374457241,0.00057967210246,8.74976758429854E-05,0.003040544235544
+Akutagawa Ryunosuke,Mikan,mikan.txt,1919,neorealism,NA,NA,NA,5050,2,0,13,0.00039603960396,0,0.002574257425743,0.002970297029703
+Natsume Soseki,Mon,mon.txt,1910,parnassianism,0.3914871,0.2217266,0.1807902,237277,41,3,128,0.000172793823253,1.26434504819262E-05,0.000539453887229,0.000724891160964
+Mori Ogai,Moso,moso.txt,1911,parnassianism,0.9916557,0.3857271,0.2635702,10757,43,72,20,0.003997397043785,0.006693315980292,0.00185925443897,0.012549967463047
+Kikuchi Hiroshi,Mumei sakka no nikki,mumeisakkano_nikki.txt,1918,neorealism,-0.9449112,0.4193139,-0.6933752,14360,39,5,14,0.002715877437326,0.000348189415042,0.000974930362117,0.004038997214485
+Kunikida Doppo,Musashino,musashino.txt,1898,romanticism,-0.1147079,0.5,0.9176629,11476,7,21,1,0.000609968630185,0.001829905890554,8.71383757406762E-05,0.00252701289648
+Higuchi Ichiyo,Nigorie,nigorie.txt,1895,pseudoclassicism,NA,NA,NA,31590,0,0,7,0,0,0.000221589110478,0.000221589110478
+Natsume Soseki,Nihyakutoka,nihyakutoka.txt,1906,romanticism,NA,NA,0.8497131,22987,15,0,11,0.00065254274155,0,0.000478531343803,0.001131074085353
+Mori Ogai,Okitsuya Goemon no isho,okitsu_yagoemonno_isho.txt,1912,historical fiction,NA,NA,NA,7010,0,0,0,0,0,0,0
+Izumi Kyoka,Onna keiju,onnakeizu.txt,1907,romanticism,0.051337717,-0.003321557,0.544110237,147532,101,17,174,0.000684597239921,0.000115229238403,0.001179405146002,0.001979231624326
+Kikuchi Hiroshi,Onshu no kanata ni,onshuno_kanatani.txt,1919,neorealism,NA,NA,NA,16701,1,0,0,5.98766540925693E-05,0,0,5.98766540925693E-05
+Akutagawa Ryunosuke,Rashomon,rashomon_kyu.txt,1915,neorealism,NA,NA,NA,5526,0,1,0,0,0.000180962721679,0,0.000180962721679
+Natsume Soseki,Sanshiro,sanshiro.txt,1908,parnassianism,0.3122854,-0.03489241,0.40259969,113308,363,44,84,0.0032036572881,0.000388322095527,0.00074134218237,0.004333321565997
+Mori Ogai,Sansho dayu,sanshodayu.txt,1915,historical fiction,NA,NA,NA,16981,0,0,0,0,0,0,0
+Mori Ogai,Seinen,seinen.txt,1911,parnassianism,-0.1636067,0.2065469,0.5219282,92889,277,345,70,0.002982053849218,0.00371411038982,0.000753587615326,0.007449751854364
+Mori Ogai,Shibue Chusai,shibue_chusai.txt,1916,historical fiction,NA,NA,0.127915,156607,45,0,39,0.000287343477622,0,0.000249031013939,0.000536374491562
+Kikuchi Hiroshi,Shinju fujin,shinju_fujin_kyukana.txt,1920,neorealism,-0.23813879,-0.004247598,0.332433259,213702,412,17,386,0.00192791831616,7.9550027608539E-05,0.001806253568053,0.003813721911821
+Tanizaki Junichiro,Shisei,shisei.txt,1910,aestheticism,NA,NA,NA,4509,3,0,2,0.000665335994677,0,0.000443557329785,0.001108893324462
+Hirotsu Ryuro,Puratohomu,shokojo.txt,1905,romanticism,NA,NA,NA,3746,3,0,0,0.000800854244527,0,0,0.000800854244527
+Tanizaki Junichiro,Shonen,shonen.txt,1911,aestheticism,-0.3823596,-0.3162278,0.4836508,16821,15,2,8,0.000891742464776,0.000118898995303,0.000475595981214,0.001486237441294
+Kunikida Doppo,Sorachigawa-no kishibe,sorachigawano_kishibe.txt,1902,romanticism,NA,NA,NA,7873,4,0,2,0.000508065540455,0,0.000254032770227,0.000762098310682
+Natsume Soseki,Sorekara,sorekara.txt,1909,parnassianism,-0.1397751,-0.2179256,0.0454942,186769,89,14,193,0.00047652447676,7.4958906456639E-05,0.001033362067581,0.001584845450798
+Nagai Kafu,Sumidagawa,sumidagawa.txt,1909,aestheticism,NA,NA,-0.03951304,40345,24,0,15,0.000594869252696,0,0.000371793282935,0.00096666253563
+Akutagawa Ryunosuke,Tabako to akuma,tabakoto_akuma.txt,1917,neorealism,NA,NA,NA,4942,22,0,19,0.004451639012546,0,0.003844597329017,0.008296236341562
+Kikuchi Hiroshi,Tadanaokyo joki,tadanaokyo_gyojoki.txt,1918,neorealism,NA,NA,NA,16989,0,0,1,0,0,5.88616163399847E-05,5.88616163399847E-05
+Tanizaki Junichiro,Tade kuu mushi,tade_ku_mushi.txt,1928,aestheticism,NA,NA,0.3211693,77045,342,0,53,0.004438964241677,0,0.000687909663184,0.005126873904861
+Mori Ogai,Takase bune,takasebune.txt,1916,parnassianism,NA,NA,NA,6046,1,0,0,0.000165398610652,0,0,0.000165398610652
+Higuchi Ichiyo,Take kurabe,takekurabe.txt,1896,pseudoclassicism,NA,NA,NA,25471,0,0,9,0,0,0.000353343017549,0.000353343017549
+Akutagawa Ryunosuke,Tokokko,torokko.txt,1922,neorealism,NA,NA,NA,3260,2,0,2,0.000613496932515,0,0.000613496932515,0.001226993865031
+Akutagawa Ryunosuke,Toshishun,toshishun.txt,1920,neorealism,NA,NA,NA,7261,0,0,1,0,0,0.000137722076849,0.000137722076849
+Futabatei Shimei,Ukigumo,ukigumo.txt,1887,realism,0.216094,0.2065118,0.59471,102642,135,99,61,0.001315251066815,0.000964517448997,0.00059429863019,0.002874067146003
+Arishima Takeo,Umareizuru nayami,umareizuru_nayami.txt,1918,shirakaba,0.06751412,-0.2781271,0.5554864,34259,73,30,8,0.002130826935988,0.000875682302461,0.000233515280656,0.003240024519104
+Mori Ogai,Utakata no ki,utakatano_ki.txt,1890,romanticism,NA,NA,0.9999932,13424,170,0,42,0.012663885578069,0,0.003128724672229,0.015792610250298
+Mori Ogai,Vita sexualis,vita_sexualis.txt,1909,parnassianism,-0.04836497,0.79517194,0.09816326,43405,25,124,29,0.00057597051031,0.002856813731137,0.000668125791959,0.004100910033406
+Natsume Soseki,Wagahai wa neko dearu,wagahaiwa_nekodearu.txt,1905,romanticism,0.1829585,0.291079,0.3525646,242203,517,58,146,0.002134573064743,0.000239468544981,0.000602800130469,0.002976841740193
+Akutagawa Ryunosuke,Yabu no naka,yabuno_naka.txt,1922,neorealism,NA,NA,NA,12043,0,0,8,0,0,0.000664286307398,0.000664286307398
+Akutagawa Ryunosuke,Yasukichi no techo kara,yasukichino_techokara.txt,1923,neorealism,NA,NA,NA,6921,69,20,21,0.009969657563936,0.002889755815634,0.003034243606415,0.015893656985985
+Natsume Soseki,Yume jyuya,yume_juya.txt,1908,parnassianism,NA,NA,-0.1763689,13488,10,0,6,0.000741399762752,0,0.000444839857651,0.001186239620403
